@@ -1,8 +1,8 @@
 ## Theming
-* Theme: Nordic-bluish-accent
-* Font: Cascadia Code
-* Icons: Suru++ Aspromauros
-* Vim colorscheme: jellybeans
+* **Theme**: [Nordic-bluish-accent](https://www.gnome-look.org/p/1267246/)
+* **Font**: [Cascadia Code](https://github.com/microsoft/cascadia-code)
+* **Icons**: [Suru++ Aspromauros](https://github.com/gusbemacbe/suru-plus-aspromauros)
+* **Vim colorscheme**: [jellybeans.vim](https://github.com/nanotech/jellybeans.vim)
 
 ## Cheat Sheet
 * **Maximize window**: `Super` + `M`
