@@ -7,15 +7,26 @@ colorscheme jellybeans
 
 set number
 set autoindent
+set incsearch
+set nofoldenable
+set cursorline
+
+set showcmd
 set nocompatible
+set hidden
 set laststatus=2
+set noswapfile
+set nobackup
+set noerrorbells
+
 set path +=**
 set wildmenu
 set wildmode=longest:full,full
-set incsearch
-set nofoldenable
-set hidden
-set showcmd
+
+set tabstop=4
+set softtabstop=0
+set noexpandtab
+set shiftwidth=4
 
 " -TERMINAL-
 
