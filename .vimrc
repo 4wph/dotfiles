@@ -46,15 +46,19 @@ autocmd VimEnter * let branch=system("git branch 2>/dev/null | grep '^*'| colrm 
 
 set statusline=
 set statusline+=%#DiffText#
-set statusline+=\ %f
-set statusline+=%m\ 
+set statusline+=\ %f\ 
 set statusline+=%#ToolbarButton#
 set statusline+=%{branch}
+set statusline+=%#DiffChange#
+set statusline+=%m
 set statusline+=%#LineNr#
 set statusline+=%=
 set statusline+=%#DiffText#
-set statusline+=\ %y\ \|
-set statusline+=\ %{strftime(\"%a\ %b\ %d\ \|\ %H:%M\")}\ 
+set statusline+=\ %Y\ 
+set statusline+=%#MatchParen#
+set statusline+=\ %l:%c\ 
+set statusline+=%#DiffChange#
+set statusline+=\ %p%%\ 
 
 " -KEYBINDINGS-
 
