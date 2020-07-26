@@ -42,15 +42,19 @@ endif
 
 " -STATUSLINE-
 
+autocmd VimEnter * let branch=system("git branch 2>/dev/null | grep '^*'| colrm 1 1 | sed 's/$/ /'")[:-2]
+
 set statusline=
-set statusline+=%#ToolbarButton#
+set statusline+=%#DiffText#
 set statusline+=\ %f
 set statusline+=%m\ 
+set statusline+=%#ToolbarButton#
+set statusline+=%{branch}
 set statusline+=%#LineNr#
 set statusline+=%=
-set statusline+=%#ToolbarButton#
+set statusline+=%#DiffText#
 set statusline+=\ %y\ \|
-set statusline+=\ %{strftime(\"%a\ %b\ %d\ \|%l:%M\ %p\")}\ 
+set statusline+=\ %{strftime(\"%a\ %b\ %d\ \|\ %H:%M\")}\ 
 
 " -KEYBINDINGS-
 
