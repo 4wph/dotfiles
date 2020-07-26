@@ -18,6 +18,8 @@ set laststatus=2
 set noswapfile
 set nobackup
 set noerrorbells
+set ignorecase
+set smartcase
 
 set path +=**
 set wildmenu
@@ -57,8 +59,6 @@ nnoremap <SPACE> <Nop>
 let mapleader=" "
 " Comment block (insert commenting characters)
 vnoremap <Leader>c :norm i
-" Window managing
-nnoremap <Leader>w <C-w>
 " Open file
 nnoremap <Leader>o :find 
 " Open buffer
@@ -71,6 +71,13 @@ nnoremap <Leader>r :!
 nnoremap <Leader>s :w<CR>
 " Quit file
 nnoremap <Leader>q :q<CR>
+
+" Window managing
+nnoremap <Leader>w <C-w>
+nnoremap <Leader>h :wincmd h<CR>
+nnoremap <Leader>j :wincmd j<CR>
+nnoremap <Leader>k :wincmd k<CR>
+nnoremap <Leader>l :wincmd l<CR>
 
 " Automatically closing paired characters
 inoremap {      {}<Left>
