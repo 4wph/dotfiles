@@ -34,11 +34,6 @@
 	  <execute>emacs</execute>
 	</action>
       </item>
-      <item label="Spacemacs">
-	<action name="Execute">
-	  <command>HOME=~/spacemacs emacs</command>
-	</action>
-      </item>
       <separator/>
       <item label="Steam">
 	<action name="Execute">
@@ -180,17 +175,17 @@
       </item>
       <item label="menu.xml">
 	<action name="Execute">
-	  <execute>~/.local/bin/lite ~/.config/openbox/menu.xml</execute>
+	  <execute>mousepad ~/.config/openbox/menu.xml</execute>
 	</action>
       </item>
       <item label="rc.xml">
 	<action name="Execute">
-	  <execute>~/.local/bin/lite ~/.config/openbox/rc.xml</execute>
+	  <execute>mousepad ~/.config/openbox/rc.xml</execute>
 	</action>
       </item>
       <item label="autostart.sh">
 	<action name="Execute">
-	  <execute>~/.local/bin/lite ~/.config/openbox/autostart.sh</execute>
+	  <execute>mousepad ~/.config/openbox/autostart.sh</execute>
 	</action>
       </item>
     </menu>
