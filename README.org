@@ -8,7 +8,7 @@
   - *Close window*: =Super= + =Q=
   - *Move window*: =Super= + =Mouse Left Drag=
   - *Resize window*: =Super= + =Mouse Right Drag=
-  - *Change workspace*: =Super= + =1=-=9=
+  - *Change workspace*: =Super= + =1-9=
   - *Change focus*: =Alt= + =Tab=
   - *Invoke terminal*: =Super= + =Enter=
   - *Invoke dmenu*: =Super= + =D=
