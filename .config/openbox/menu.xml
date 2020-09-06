@@ -1,221 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
-	<menu id="root-menu" label="Openbox 3">
-		<item label="Terminal">
-			<action name="Execute">
-				<execute>alacritty</execute>
-			</action>
-		</item>
-		<item label="Firefox">
-			<action name="Execute">
-				<execute>firefox</execute>
-			</action>
-		</item>
-		<item label="Krita">
-			<action name="Execute">
-				<execute>krita</execute>
-			</action>
-		</item>
-		<item label="Thunar">
-			<action name="Execute">
-				<execute>thunar</execute>
-			</action>
-		</item>
-		<!-- This requires the presence of the 'openbox-menu' package to work -->
-		<separator/>
-		<menu id="Games etc" label="Stuff">
-			<item label="Browser">
-				<action name="Execute">
-					<execute>qutebrowser</execute>
-				</action>
-			</item>
-			<separator/>
-			<item label="Steam">
-				<action name="Execute">
-					<execute>steam</execute>
-				</action>
-			</item>
-			<item label="osu!lazer">
-				<action name="Execute">
-					<execute>~/home/HDD/Downloads/osu.AppImage</execute>
-				</action>
-			</item>
-                        <item label="Minecraft">
-				<action name="Execute">
-					<execute>/home/HDD/SkaiaCraft/start.sh</execute>
-				</action>
-			</item>
+  <menu id="root-menu" label="Openbox 3">
+    <item label="Terminal">
+      <action name="Execute">
+	<execute>alacritty</execute>
+      </action>
+    </item>
+    <item label="Firefox">
+      <action name="Execute">
+	<execute>firefox</execute>
+      </action>
+    </item>
+    <item label="Krita">
+      <action name="Execute">
+	<execute>krita</execute>
+      </action>
+    </item>
+    <item label="Thunar">
+      <action name="Execute">
+	<execute>thunar</execute>
+      </action>
+    </item>
+    <!-- This requires the presence of the 'openbox-menu' package to work -->
+    <separator/>
+    <menu id="Games etc" label="Stuff">
+      <item label="Browser">
+	<action name="Execute">
+	  <execute>qutebrowser</execute>
+	</action>
+      </item>
+      <item label="Emacs">
+	<action name="Execute">
+	  <execute>emacs</execute>
+	</action>
+      </item>
+      <item label="Spacemacs">
+	<action name="Execute">
+	  <command>HOME=~/spacemacs emacs</command>
+	</action>
+      </item>
+      <separator/>
+      <item label="Steam">
+	<action name="Execute">
+	  <execute>steam</execute>
+	</action>
+      </item>
+      <item label="Beatoraja">
+	<action name="Execute">
+	  <execute>/home/HDD/Downloads/Apps/beatoraja/beatoraja-config.command</execute>
+	</action>
+      </item>
+      <item label="Minecraft">
+	<action name="Execute">
+	  <execute>/home/HDD/SkaiaCraft/start.sh</execute>
+	</action>
+      </item>
 
-			<item label="Battle.net">
-				<action name="Execute">
-					<execute>wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Battle.net/Battle.net\ Launcher.exe</execute>
-				</action>
-			</item>
-			<separator/>
-			<item label="Discord">
-				<action name="Execute">
-					<execute>discord</execute>
-				</action>
-			</item>
-			<item label="Spotify">
-				<action name="Execute">
-					<execute>spotify</execute>
-				</action>
-			</item>
-			<item label="InFirefox">
-				<action name="Execute">
-					<execute>firefox --private</execute>
-				</action>
-			</item>
-                </menu>
-		<menu id="root-menu-302232" label="Emulators">
-			<item label="mednafen">
-				<action name="Execute">
-					<execute>mednaffe</execute>
-				</action>
-			</item>
-			<item label="retroarch">
-				<action name="Execute">
-					<execute>retroarch</execute>
-				</action>
-			</item>
-			<item label="mupen64">
-				<action name="Execute">
-					<execute>mupen64plus-qt</execute>
-				</action>
-			</item>
-			<item label="dolphin">
-				<action name="Execute">
-					<execute>dolphin-emu</execute>
-				</action>
-			</item>
-                        <item label="pcsx2">
-				<action name="Execute">
-					<execute>PCSX2</execute>
-				</action>
-			</item>
-			<item label="ppsspp">
-				<action name="Execute">
-					<execute>ppsspp</execute>
-				</action>
-			</item>
-			<item label="mame">
-				<action name="Execute">
-					<execute>mame</execute>
-				</action>
-			</item>
-			<item label="desmume">
-				<action name="Execute">
-					<execute>desmume</execute>
-				</action>
-			</item>
-			<item label="pcsxr">
-				<action name="Execute">
-					<execute>pcsxr</execute>
-				</action>
-			</item>
-		</menu>
-		<menu id="root-menu-125923" label="Programs">
-			<item label="Mousepad">
-				<action name="Execute">
-					<execute>mousepad</execute>
-				</action>
-			</item>
-			<item label="LibreOffice">
-				<action name="Execute">
-					<execute>libreoffice</execute>
-				</action>
-			</item>
-			<menu id="root-menu-125923-17389" label="Graphics">
-				<item label="SSR">
-					<action name="Execute">
-						<execute>simplescreenrecorder</execute>
-					</action>
-				</item>
-				<item label="Inkscape">
-					<action name="Execute">
-						<execute>inkscape</execute>
-					</action>
-				</item>
-				<item label="Gimp">
-					<action name="Execute">
-						<execute>gimp</execute>
-					</action>
-				</item>
-			</menu>
-			<menu id="root-menu-125923-313914" label="Music">
-				<item label="UTAU">
-					<action name="Execute">
-						<execute>~/.local/bin/utau</execute>
-					</action>
-				</item>
-				<item label="LMMS">
-					<action name="Execute">
-						<execute>~/Downloads/AppImages/lmms-1.2.1-linux-x86_64.AppImage</execute>
-					</action>
-				</item>
-				<item label="MuseScore">
-					<action name="Execute">
-						<execute>~/Downloads/AppImages/MuseScore-3.4.2-x86_64.AppImage</execute>
-					</action>
-				</item>
-				<item label="Audacity">
-					<action name="Execute">
-						<execute>audacity</execute>
-					</action>
-				</item>
-			</menu>
-		</menu>
-		<separator/>
-		<menu id="root-menu-761145" label="OB Config">
-			<item label="obconf">
-				<action name="Execute">
-					<execute>obconf</execute>
-				</action>
-			</item>
-			<item label="lxappearence">
-				<action name="Execute">
-					<execute>lxappearance</execute>
-				</action>
-			</item>
-			<item label="menu.xml">
-				<action name="Execute">
-					<execute>~/.local/bin/lite ~/.config/openbox/menu.xml</execute>
-				</action>
-			</item>
-			<item label="rc.xml">
-				<action name="Execute">
-					<execute>~/.local/bin/lite ~/.config/openbox/rc.xml</execute>
-				</action>
-			</item>
-			<item label="autostart.sh">
-				<action name="Execute">
-					<execute>~/.local/bin/lite ~/.config/openbox/autostart.sh</execute>
-				</action>
-			</item>
-		</menu>
-		<item label="Nitrogen">
-			<action name="Execute">
-				<execute>nitrogen</execute>
-			</action>
-		</item>
-		<item label="Reconfigure">
-			<action name="Reconfigure"/>
-		</item>
-		<item label="Restart">
-			<action name="Restart"/>
-		</item>
-		<separator/>
-		<item label="Shutdown">
-		  <action name="Execute">
-                    <prompt>
-                      Are you sure you want to shut down?
-                    </prompt>
-                    <execute>
-                      shutdown -h now
-                    </execute>
-                  </action>
-		</item>
-	</menu>
+      <item label="Battle.net">
+	<action name="Execute">
+	  <execute>wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Battle.net/Battle.net\ Launcher.exe</execute>
+	</action>
+      </item>
+      <separator/>
+      <item label="Discord">
+	<action name="Execute">
+	  <execute>discord</execute>
+	</action>
+      </item>
+      <item label="Spotify">
+	<action name="Execute">
+	  <execute>spotify</execute>
+	</action>
+      </item>
+      <item label="InFirefox">
+	<action name="Execute">
+	  <execute>firefox --private</execute>
+	</action>
+      </item>
+    </menu>
+    <menu id="root-menu-302232" label="Emulators">
+      <item label="mupen64">
+	<action name="Execute">
+	  <execute>mupen64plus-qt</execute>
+	</action>
+      </item>
+      <item label="dolphin">
+	<action name="Execute">
+	  <execute>dolphin-emu</execute>
+	</action>
+      </item>
+      <item label="pcsx2">
+	<action name="Execute">
+	  <execute>PCSX2</execute>
+	</action>
+      </item>
+      <item label="desmume">
+	<action name="Execute">
+	  <execute>desmume</execute>
+	</action>
+      </item>
+      <item label="pcsxr">
+	<action name="Execute">
+	  <execute>pcsxr</execute>
+	</action>
+      </item>
+      <item label="ppsspp">
+	<action name="Execute">
+	  <execute>ppsspp</execute>
+	</action>
+      </item>
+      <item label="mame">
+	<action name="Execute">
+	  <execute>mame</execute>
+	</action>
+      </item>
+    </menu>
+    <menu id="root-menu-125923" label="Programs">
+      <item label="Mousepad">
+	<action name="Execute">
+	  <execute>mousepad</execute>
+	</action>
+      </item>
+      <item label="LibreOffice">
+	<action name="Execute">
+	  <execute>libreoffice</execute>
+	</action>
+      </item>
+      <menu id="root-menu-125923-17389" label="Graphics">
+	<item label="SSR">
+	  <action name="Execute">
+	    <execute>simplescreenrecorder</execute>
+	  </action>
+	</item>
+	<item label="Inkscape">
+	  <action name="Execute">
+	    <execute>inkscape</execute>
+	  </action>
+	</item>
+	<item label="Gimp">
+	  <action name="Execute">
+	    <execute>gimp</execute>
+	  </action>
+	</item>
+      </menu>
+      <menu id="root-menu-125923-313914" label="Music">
+	<item label="UTAU">
+	  <action name="Execute">
+	    <execute>~/.local/bin/utau</execute>
+	  </action>
+	</item>
+	<item label="LMMS">
+	  <action name="Execute">
+	    <execute>~/Downloads/AppImages/lmms-1.2.1-linux-x86_64.AppImage</execute>
+	  </action>
+	</item>
+	<item label="MuseScore">
+	  <action name="Execute">
+	    <execute>~/Downloads/AppImages/MuseScore-3.4.2-x86_64.AppImage</execute>
+	  </action>
+	</item>
+	<item label="Audacity">
+	  <action name="Execute">
+	    <execute>audacity</execute>
+	  </action>
+	</item>
+      </menu>
+    </menu>
+    <separator/>
+    <menu id="root-menu-761145" label="OB Config">
+      <item label="obconf">
+	<action name="Execute">
+	  <execute>obconf</execute>
+	</action>
+      </item>
+      <item label="lxappearence">
+	<action name="Execute">
+	  <execute>lxappearance</execute>
+	</action>
+      </item>
+      <item label="menu.xml">
+	<action name="Execute">
+	  <execute>~/.local/bin/lite ~/.config/openbox/menu.xml</execute>
+	</action>
+      </item>
+      <item label="rc.xml">
+	<action name="Execute">
+	  <execute>~/.local/bin/lite ~/.config/openbox/rc.xml</execute>
+	</action>
+      </item>
+      <item label="autostart.sh">
+	<action name="Execute">
+	  <execute>~/.local/bin/lite ~/.config/openbox/autostart.sh</execute>
+	</action>
+      </item>
+    </menu>
+    <item label="Nitrogen">
+      <action name="Execute">
+	<execute>nitrogen</execute>
+      </action>
+    </item>
+    <item label="Reconfigure">
+      <action name="Reconfigure"/>
+    </item>
+    <item label="Restart">
+      <action name="Restart"/>
+    </item>
+    <separator/>
+    <item label="Shutdown">
+      <action name="Execute">
+        <prompt>
+          Are you sure you want to shut down?
+        </prompt>
+        <execute>
+          shutdown -h now
+        </execute>
+      </action>
+    </item>
+  </menu>
 </openbox_menu>
 

@@ -30,6 +30,12 @@ set softtabstop=0
 set noexpandtab
 set shiftwidth=4
 
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 20
+let g:netrw_fastbrowse = 0
+
 " -TERMINAL-
 
 if has('termguicolors')
@@ -50,7 +56,7 @@ set statusline+=\ %f\
 set statusline+=%#ToolbarButton#
 set statusline+=%{branch}
 set statusline+=%#DiffChange#
-set statusline+=%m
+set statusline+=%r%m
 set statusline+=%#LineNr#
 set statusline+=%=
 set statusline+=%#DiffText#
@@ -71,21 +77,22 @@ vnoremap <Leader>c :norm i
 nnoremap <Leader>o :find 
 " Open buffer
 nnoremap <Leader>p :b 
-" Open terminal
-nnoremap <Leader>t :bo term<CR>
 " Run command
 nnoremap <Leader>r :!
 " Save file
 nnoremap <Leader>s :w<CR>
 " Quit file
-nnoremap <Leader>q :q<CR>
+nnoremap <Leader>q :bdelete<CR>
+" Open explorer
+nnoremap <Leader>t :Vex<CR>
 
 " Window managing
-nnoremap <Leader>w <C-w>
 nnoremap <Leader>h :wincmd h<CR>
 nnoremap <Leader>j :wincmd j<CR>
 nnoremap <Leader>k :wincmd k<CR>
 nnoremap <Leader>l :wincmd l<CR>
+nnoremap <Leader>w :wincmd c<CR>
+nnoremap <Leader><Tab> :wincmd w<CR>
 
 " Automatically closing paired characters
 inoremap {      {}<Left>

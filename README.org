@@ -1,0 +1,46 @@
+* Theming
+  - *Theme*: [[https://www.gnome-look.org/p/1267246/][Nordic-bluish-accent]]
+  - *Font*: [[https://github.com/microsoft/cascadia-code][Cascadia Code]]
+  - *Icons*: [[https://github.com/gusbemacbe/suru-plus-aspromauros][Suru++ Aspromauros]]
+
+* Openbox
+  - *Maximize window*: =Super= + =M=
+  - *Close window*: =Super= + =Q=
+  - *Move window*: =Super= + =Mouse Left Drag=
+  - *Resize window*: =Super= + =Mouse Right Drag=
+  - *Change workspace*: =Super= + =1=-=9=
+  - *Change focus*: =Alt= + =Tab=
+  - *Invoke terminal*: =Super= + =Enter=
+  - *Invoke dmenu*: =Super= + =D=
+  - *Invoke file manager*: =Super= + =E=
+  - *Volume up*: =Super= + =V=
+  - *Volume down*: =Super= + =Shift= + =V=
+
+* Emacs
+** Enviroment
+   - *Open file*: =C-x C-f=
+   - *Save file*: =C-x C-s=
+   - *Switch buffer*: =C-x= =b=
+   - *Kill buffer*: =C-x= =k=
+   - *Switch window*: =C-x= =o=
+   - *Kill window*: =C-x= =0=
+   - *Bookmarks*: =C-x r=
+     - *List*: =l=
+     - *Mark*: =m=
+     - *jump*: =b=
+   - *Search*: =C-s=
+   - *Reverse search*: =C-r=
+   - *Search and replace*: =M-%=
+   - *Comment region*: =M-;=
+   - *Close Emacs*: =C-x C-c=
+
+** Editing
+   - *Go to end of file*: =M->=
+   - *Go to start of file*: =M-<=
+   - *Go to end of line*: =C-a=
+   - *Go to start of line*: =C-e=
+   - *Kill line*: =C-k=
+   - *Start mark*: =C-SPC=
+   - *Copy*: =M-w=
+   - *Cut*: =C-w=
+   - *Paste*: =C-y=

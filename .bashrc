@@ -18,9 +18,6 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
@@ -40,6 +37,36 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
+# define which extractor to use (usage: ex <file>)
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;      
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+
 # ⌂ / 🏠
 
 # Fancy prompt
@@ -56,10 +83,6 @@ PS1='\[\033[01;37m\]${PWD##*/} \[\033[01;34m\]$(git branch 2>/dev/null | grep '^
 
 # Show system information when opening the shell
 #bash ~/Downloads/ufetch.sh
-
-# Ruby configuration
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
 
 export PATH=$PATH:~/.local/bin/
 
