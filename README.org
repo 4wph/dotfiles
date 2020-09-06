@@ -24,7 +24,7 @@
    - *Kill buffer*: =C-x= =k=
    - *Switch window*: =C-x= =o=
    - *Kill window*: =C-x= =0=
-   - *Bookmarks*: =C-x r=
+   - *Bookmarks*: =C-x= =r=
      - *List*: =l=
      - *Mark*: =m=
      - *jump*: =b=
