@@ -249,8 +249,8 @@
     <keybind key="W-S-m">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-	<width>1900/1920</width>
-	<height>1060/1080</height>
+	<width>1900</width>
+	<height>1060</height>
 	<x>10</x>
 	<y>10</y>
       </action>
@@ -258,8 +258,8 @@
     <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-	<width>945/1920</width>
-	<height>1060/1080</height>
+	<width>945</width>
+	<height>1060</height>
 	<x>10</x>
 	<y>10</y>
       </action>
@@ -267,8 +267,8 @@
     <keybind key="W-Right">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-	<width>945/1920</width>
-	<height>1060/1080</height>
+	<width>945</width>
+	<height>1060</height>
 	<x>965</x>
 	<y>10</y>
       </action>
@@ -276,8 +276,8 @@
     <keybind key="W-Up">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-	<width>1900/1920</width>
-	<height>525/1080</height>
+	<width>1900</width>
+	<height>525</height>
 	<x>10</x>
 	<y>10</y>
       </action>
@@ -285,8 +285,8 @@
     <keybind key="W-Down">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-	<width>1900/1920</width>
-	<height>525/1080</height>
+	<width>1900</width>
+	<height>525</height>
 	<x>10</x>
 	<y>545</y>
       </action>
@@ -303,8 +303,8 @@
     <keybind key="W-End">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-	<width>945/1920</width>
-	<height>525/1080</height>
+	<width>945</width>
+	<height>525</height>
 	<x>10</x>
 	<y>545</y>
       </action>
@@ -321,8 +321,8 @@
     <keybind key="W-Next">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-	<width>945/1920</width>
-	<height>525/1080</height>
+	<width>945</width>
+	<height>525</height>
 	<x>965</x>
 	<y>545</y>
       </action>

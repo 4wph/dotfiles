@@ -29,6 +29,9 @@
    kill-whole-line t
    case-fold-search nil)
 
+;; Window alignment
+(setq frame-resize-pixelwise t)
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (defvar work-folder "/home/HDD/Documents/emacs/"
