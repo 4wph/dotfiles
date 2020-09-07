@@ -177,30 +177,30 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
-    <keybind key="W-Left">
-      <action name="GoToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-Right">
-      <action name="GoToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-Up">
-      <action name="GoToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
+    <!-- <keybind key="W-Left"> -->
+    <!--   <action name="GoToDesktop"> -->
+    <!--     <to>left</to> -->
+    <!--     <wrap>no</wrap> -->
+    <!--   </action> -->
+    <!-- </keybind> -->
+    <!-- <keybind key="W-Right"> -->
+    <!--   <action name="GoToDesktop"> -->
+    <!--     <to>right</to> -->
+    <!--     <wrap>no</wrap> -->
+    <!--   </action> -->
+    <!-- </keybind> -->
+    <!-- <keybind key="W-Up"> -->
+    <!--   <action name="GoToDesktop"> -->
+    <!--     <to>up</to> -->
+    <!--     <wrap>no</wrap> -->
+    <!--   </action> -->
+    <!-- </keybind> -->
+    <!-- <keybind key="W-Down"> -->
+    <!--   <action name="GoToDesktop"> -->
+    <!--     <to>down</to> -->
+    <!--     <wrap>no</wrap> -->
+    <!--   </action> -->
+    <!-- </keybind> -->
     <keybind key="W-S-Left">
       <action name="SendToDesktop">
         <to>left</to>
@@ -243,6 +243,34 @@
     <keybind key="W-4">
       <action name="GoToDesktop">
         <to>4</to>
+      </action>
+    </keybind>
+    <!-- Tiling -->
+    <keybind key="W-S-m">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<width>1900/1920</width>
+	<height>1060/1080</height>
+	<x>10</x>
+	<y>10</y>
+      </action>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<width>945/1920</width>
+	<height>1060/1080</height>
+	<x>10</x>
+	<y>10</y>
+      </action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<width>945/1920</width>
+	<height>1060/1080</height>
+	<x>965</x>
+	<y>10</y>
       </action>
     </keybind>
     <!-- Keybindings for windows -->
