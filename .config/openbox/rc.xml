@@ -273,6 +273,60 @@
 	<y>10</y>
       </action>
     </keybind>
+    <keybind key="W-Up">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<width>1900/1920</width>
+	<height>525/1080</height>
+	<x>10</x>
+	<y>10</y>
+      </action>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<width>1900/1920</width>
+	<height>525/1080</height>
+	<x>10</x>
+	<y>545</y>
+      </action>
+    </keybind>
+    <keybind key="W-Home">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<width>945/1920</width>
+	<height>525/1080</height>
+	<x>10</x>
+	<y>10</y>
+      </action>
+    </keybind>
+    <keybind key="W-End">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<width>945/1920</width>
+	<height>525/1080</height>
+	<x>10</x>
+	<y>545</y>
+      </action>
+    </keybind>
+    <keybind key="W-Prior">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<width>945/1920</width>
+	<height>525/1080</height>
+	<x>965</x>
+	<y>10</y>
+      </action>
+    </keybind>
+    <keybind key="W-Next">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<width>945/1920</width>
+	<height>525/1080</height>
+	<x>965</x>
+	<y>545</y>
+      </action>
+    </keybind>
     <!-- Keybindings for windows -->
     <keybind key="W-q">
       <action name="Close"/>
