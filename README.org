@@ -37,8 +37,8 @@
 ** Editing
    - *Go to end of file*: =M->=
    - *Go to start of file*: =M-<=
-   - *Go to end of line*: =C-a=
-   - *Go to start of line*: =C-e=
+   - *Go to end of line*: =C-e=
+   - *Go to start of line*: =C-a=
    - *Kill line*: =C-k=
    - *Start mark*: =C-SPC=
    - *Copy*: =M-w=
