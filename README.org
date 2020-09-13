@@ -3,7 +3,7 @@
   - *Font*: [[https://github.com/microsoft/cascadia-code][Cascadia Code]]
   - *Icons*: [[https://github.com/gusbemacbe/suru-plus-aspromauros][Suru++ Aspromauros]]
 
-* Openbox
+* Openbox Keybindings
   - *Maximize window*: =Super= + =M=
   - *Close window*: =Super= + =Q=
   - *Move window*: =Super= + =Mouse Left Drag=
@@ -16,31 +16,3 @@
   - *Volume up*: =Super= + =V=
   - *Volume down*: =Super= + =Shift= + =V=
 
-* Emacs
-** Enviroment
-   - *Open file*: =C-x C-f=
-   - *Save file*: =C-x C-s=
-   - *Switch buffer*: =C-x= =b=
-   - *Kill buffer*: =C-x= =k=
-   - *Switch window*: =C-x= =o=
-   - *Kill window*: =C-x= =0=
-   - *Bookmarks*: =C-x= =r=
-     - *List*: =l=
-     - *Mark*: =m=
-     - *jump*: =b=
-   - *Search*: =C-s=
-   - *Reverse search*: =C-r=
-   - *Search and replace*: =M-%=
-   - *Comment region*: =M-;=
-   - *Close Emacs*: =C-x C-c=
-
-** Editing
-   - *Go to end of file*: =M->=
-   - *Go to start of file*: =M-<=
-   - *Go to end of line*: =C-e=
-   - *Go to start of line*: =C-a=
-   - *Kill line*: =C-k=
-   - *Start mark*: =C-SPC=
-   - *Copy*: =M-w=
-   - *Cut*: =C-w=
-   - *Paste*: =C-y=
