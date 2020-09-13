@@ -11,9 +11,7 @@
 (blink-cursor-mode 0)
 (put 'dired-find-alternate-file 'disabled nil)
 
-;; https://github.com/googlefonts/Inconsolata
-(set-frame-font "Inconsolata 17" nil t)
-;; (set-face-attribute 'default nil :height 140)
+(set-frame-font "Office Code Pro 15" nil t)
 
 (setq
  make-backup-files nil
@@ -30,7 +28,6 @@
    kill-whole-line t
    case-fold-search nil)
 
-;; Window alignment
 (setq frame-resize-pixelwise t)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -54,11 +51,44 @@
 
 ;; Packages
 
-;; https://github.com/sabof/org-bullets
-(add-to-list 'load-path "~/.emacs.d/org-bullets")
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+(package-refresh-contents)
+
+;; Evil Mode
+
+(unless (package-installed-p 'evil)
+  (package-install 'evil))
+
+(require 'evil)
+(evil-mode 1)
+
+;; Org-Bullets
+
+(unless (package-installed-p 'org-bullets)
+  (package-install 'org-bullets))
+
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
-;; https://github.com/arcticicestudio/nord-emacs
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+;; Nord Theme
+
+(unless (package-installed-p 'nord-theme)
+  (package-install 'nord-theme))
+
+(add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/"))
 (load-theme 'nord t)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(nord-theme org-bullets evil)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
