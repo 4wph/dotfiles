@@ -43,14 +43,6 @@
       bookmark-default-file (concat emacs-folder "bookmarks")
       org-file-apps '((auto-mode . emacs)))
 
-;; Keybindings
-
-(global-set-key (kbd "C-c b") 'bookmark-jump)
-(global-set-key (kbd "C-c l") 'list-bookmarks)
-(global-set-key (kbd "C-c p") (lambda () (interactive) (dired project-folder)))
-
-;; Packages
-
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
@@ -72,6 +64,13 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+;; Avy
+
+(unless (package-installed-p 'avy)
+  (package-install 'avy))
+
+(require 'avy)
+
 ;; Nord Theme
 
 (unless (package-installed-p 'nord-theme)
@@ -80,12 +79,19 @@
 (add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/"))
 (load-theme 'nord t)
 
+;; Keybindings
+
+(global-set-key (kbd "C-c b") 'bookmark-jump)
+(global-set-key (kbd "C-c p") (lambda () (interactive) (dired project-folder)))
+(global-set-key (kbd "C-c s") 'avy-goto-char)
+(global-set-key (kbd "C-c l") 'avy-goto-line)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(nord-theme org-bullets evil)))
+ '(package-selected-packages '(avy nord-theme org-bullets evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
