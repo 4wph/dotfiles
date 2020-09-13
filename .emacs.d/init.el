@@ -13,6 +13,7 @@
 
 ;; https://github.com/googlefonts/Inconsolata
 (set-frame-font "Inconsolata 17" nil t)
+;; (set-face-attribute 'default nil :height 140)
 
 (setq
  make-backup-files nil
@@ -34,12 +35,22 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(defvar work-folder "/home/HDD/Documents/emacs/"
+(defvar emacs-folder "/home/HDD/Documents/emacs/"
   "Folder to store various emacs (non-config) files")
+(defvar project-folder "/home/HDD/Documents/7CC/"
+  "Folder to store project files")
+
 (setq org-agenda-start-on-weekday nil
-      org-agenda-files (list work-folder)
-      org-default-notes-file (concat work-folder "Self.org")
-      bookmark-default-file (concat work-folder "bookmarks"))
+      org-agenda-files (list emacs-folder)
+      org-default-notes-file (concat emacs-folder "Self.org")
+      bookmark-default-file (concat emacs-folder "bookmarks")
+      org-file-apps '((auto-mode . emacs)))
+
+;; Keybindings
+
+(global-set-key (kbd "C-c b") 'bookmark-jump)
+(global-set-key (kbd "C-c l") 'list-bookmarks)
+(global-set-key (kbd "C-c p") (lambda () (interactive) (dired project-folder)))
 
 ;; Packages
 
@@ -48,8 +59,6 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
-;; https://github.com/sellout/emacs-color-theme-solarized.git
-(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized")
-(set-frame-parameter nil 'background-mode 'dark)
-(set-terminal-parameter nil 'background-mode 'dark)
-(load-theme 'solarized t)
+;; https://github.com/arcticicestudio/nord-emacs
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'nord t)
