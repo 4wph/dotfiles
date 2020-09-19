@@ -46,7 +46,8 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
-(package-refresh-contents)
+(when (not package-archive-contents)
+    (package-refresh-contents))
 
 ;; Evil Mode
 
@@ -81,10 +82,9 @@
 
 ;; Keybindings
 
-(global-set-key (kbd "C-c b") 'bookmark-jump)
 (global-set-key (kbd "C-c p") (lambda () (interactive) (dired project-folder)))
-(global-set-key (kbd "C-c s") 'avy-goto-char)
-(global-set-key (kbd "C-c l") 'avy-goto-line)
+(global-set-key (kbd "C-:") 'avy-goto-char)
+(global-set-key (kbd "C-L") 'avy-goto-line)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
