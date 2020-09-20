@@ -1,18 +1,18 @@
 font:
   normal:
     family: Office Code Pro
-    style: Regular
+    style: Medium
 
   bold:
     family: Office Code Pro
     style: Bold
 
   italic:
-    family: Source Code Variable
-    style: Italic
+    family: Office Code Pro
+    style: Medium Italic
 
   bold_italic:
-    family: Source Code Variable
+    family: Office Code Pro
     style: Bold Italic
 
   size: 15
