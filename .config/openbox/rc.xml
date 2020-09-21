@@ -405,7 +405,7 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-Return">
       <action name="Execute">
-        <command>alacritty</command>
+        <command>kitty</command>
       </action>
     </keybind>
     <keybind key="W-b">
