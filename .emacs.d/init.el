@@ -49,28 +49,67 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-;; Evil Mode
-
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
-
-(require 'evil)
-(evil-mode 1)
-
-;; Org-Bullets
-
-(unless (package-installed-p 'org-bullets)
-  (package-install 'org-bullets))
-
-(require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
 ;; Avy
 
 (unless (package-installed-p 'avy)
   (package-install 'avy))
 
 (require 'avy)
+
+;; Expand Region
+
+(unless (package-installed-p 'expand-region)
+  (package-install 'expand-region))
+
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+;; Org-Superstar
+
+(unless (package-installed-p 'org-superstar)
+  (package-install 'org-superstar))
+
+(require 'org-superstar)
+(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+
+;; Evil Mode
+
+;; (unless (package-installed-p 'evil)
+;;   (package-install 'evil))
+
+;; (require 'evil)
+;; (evil-mode 1)
+
+;; Clojure Mode
+
+(unless (package-installed-p 'clojure-mode)
+  (package-install 'clojure-mode))
+
+;; ParEdit / Eldoc
+
+(unless (package-installed-p 'paredit)
+  (package-install 'paredit))
+
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'clojure-mode-hook          #'enable-paredit-mode)
+
+(require 'eldoc) ; if not already loaded
+(eldoc-add-command
+    'paredit-backward-delete
+    'paredit-close-round)
+
+(add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
+(add-hook 'ielm-mode-hook 'eldoc-mode)
+(add-hook 'lisp-mode-hook 'eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'eldoc-mode)
+(add-hook 'scheme-mode-hook 'eldoc-mode)
+(add-hook 'clojure-mode-hook 'eldoc-mode)
 
 ;; Nord Theme
 
