@@ -34,8 +34,6 @@
 
 (defvar emacs-folder "/home/HDD/Documents/emacs/"
   "Folder to store various emacs (non-config) files")
-(defvar project-folder "/home/HDD/Documents/7CC/"
-  "Folder to store project files")
 
 (setq org-agenda-start-on-weekday nil
       org-agenda-files (list emacs-folder)
@@ -43,97 +41,47 @@
       bookmark-default-file (concat emacs-folder "bookmarks")
       org-file-apps '((auto-mode . emacs)))
 
+;; Packages
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-;; Avy
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 
-(unless (package-installed-p 'avy)
-  (package-install 'avy))
+(eval-when-compile
+  (require 'use-package))
 
-(require 'avy)
+(use-package clojure-mode
+  :ensure t)
 
-;; Expand Region
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
 
-(unless (package-installed-p 'expand-region)
-  (package-install 'expand-region))
+(use-package projectile
+  :ensure t
+  :init
+  (setq projectile-project-search-path '("/home/HDD/Documents/7CC"))
+  :config
+  (projectile-mode +1)
+  :bind-keymap
+  ("C-c p" . projectile-command-map))
 
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
+(use-package paredit
+  :ensure t
+  :hook ((emacs-lisp-mode
+	  ielm-mode
+	  lisp-mode
+	  lisp-interaction-mode
+	  scheme-mode
+	  clojure-mode) . paredit-mode))
 
-;; Org-Superstar
-
-(unless (package-installed-p 'org-superstar)
-  (package-install 'org-superstar))
-
-(require 'org-superstar)
-(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
-
-;; Evil Mode
-
-;; (unless (package-installed-p 'evil)
-;;   (package-install 'evil))
-
-;; (require 'evil)
-;; (evil-mode 1)
-
-;; Clojure Mode
-
-(unless (package-installed-p 'clojure-mode)
-  (package-install 'clojure-mode))
-
-;; ParEdit / Eldoc
-
-(unless (package-installed-p 'paredit)
-  (package-install 'paredit))
-
-(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
-(add-hook 'clojure-mode-hook          #'enable-paredit-mode)
-
-(require 'eldoc) ; if not already loaded
-(eldoc-add-command
-    'paredit-backward-delete
-    'paredit-close-round)
-
-(add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
-(add-hook 'ielm-mode-hook 'eldoc-mode)
-(add-hook 'lisp-mode-hook 'eldoc-mode)
-(add-hook 'lisp-interaction-mode-hook 'eldoc-mode)
-(add-hook 'scheme-mode-hook 'eldoc-mode)
-(add-hook 'clojure-mode-hook 'eldoc-mode)
-
-;; Nord Theme
-
-(unless (package-installed-p 'nord-theme)
-  (package-install 'nord-theme))
-
-(add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/"))
-(load-theme 'nord t)
-
-;; Keybindings
-
-(global-set-key (kbd "C-c p") (lambda () (interactive) (dired project-folder)))
-(global-set-key (kbd "C-:") 'avy-goto-char)
-(global-set-key (kbd "C-L") 'avy-goto-line)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(avy nord-theme org-bullets evil)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(use-package atom-one-dark-theme
+  :ensure t
+  :config
+  (load-theme 'atom-one-dark t))

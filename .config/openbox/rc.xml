@@ -294,8 +294,8 @@
     <keybind key="W-Home">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-	<width>945/1920</width>
-	<height>525/1080</height>
+	<width>945</width>
+	<height>525</height>
 	<x>10</x>
 	<y>10</y>
       </action>
@@ -312,8 +312,8 @@
     <keybind key="W-Prior">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-	<width>945/1920</width>
-	<height>525/1080</height>
+	<width>945</width>
+	<height>525</height>
 	<x>965</x>
 	<y>10</y>
       </action>
@@ -349,6 +349,11 @@
     <keybind key="Print">
       <action name="Execute">
         <command>scrot -s /home/HDD/Pictures/Leticia/Screenshots/%m%d-%H%M%S.png</command>
+      </action>
+    </keybind>
+    <keybind key="A-Print">
+      <action name="Execute">
+        <command>scrot -s /home/HDD/Pictures/Screenshots/%m%d-%H%M%S.png</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
