@@ -2,17 +2,6 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
-(global-hl-line-mode)
-(global-visual-line-mode)
-(electric-pair-mode)
-(delete-selection-mode t)
-(setq show-paren-delay 0)
-(show-paren-mode)
-(blink-cursor-mode 0)
-(put 'dired-find-alternate-file 'disabled nil)
-
-(set-frame-font "Office Code Pro 15" nil t)
-
 (setq
  make-backup-files nil
  auto-save-default nil
@@ -26,9 +15,20 @@
    use-dialog-box nil
    mark-even-if-inactive nil
    kill-whole-line t
-   case-fold-search nil)
+   case-fold-search nil
+   echo-keystrokes .1
+   frame-resize-pixelwise t
+   show-paren-delay 0)
 
-(setq frame-resize-pixelwise t)
+(global-hl-line-mode)
+(global-visual-line-mode)
+(electric-pair-mode)
+(delete-selection-mode t)
+(show-paren-mode)
+(blink-cursor-mode 0)
+(put 'dired-find-alternate-file 'disabled nil)
+
+(set-frame-font "Office Code Pro 15" nil t)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -38,7 +38,6 @@
 (setq org-agenda-start-on-weekday nil
       org-agenda-files (list emacs-folder)
       org-default-notes-file (concat emacs-folder "Self.org")
-      bookmark-default-file (concat emacs-folder "bookmarks")
       org-file-apps '((auto-mode . emacs)))
 
 ;; Packages
