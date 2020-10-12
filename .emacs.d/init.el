@@ -1,44 +1,39 @@
-(menu-bar-mode -1)
-(toggle-scroll-bar -1)
-(tool-bar-mode -1)
-
 (setq
  make-backup-files nil
  auto-save-default nil
- create-lockfiles nil)
+ create-lockfiles nil
+ mouse-wheel-scroll-amount '(1 ((shift) . 1))
+ mouse-wheel-progressive-speed nil
+ mouse-wheel-follow-mouse t
+ scroll-step 1
+ inhibit-startup-screen t
+ initial-scratch-message nil
+ sentence-end-double-space nil
+ ring-bell-function 'ignore
+ use-dialog-box nil
+ mark-even-if-inactive nil
+ case-fold-search nil
+ echo-keystrokes .1
+ frame-resize-pixelwise t
+ show-paren-delay 0
+ ido-enable-flex-matching t
+ ido-separator "\n"
+ ido-everywhere t)
 
-(setq
-   inhibit-startup-screen t
-   initial-scratch-message nil
-   sentence-end-double-space nil
-   ring-bell-function 'ignore
-   use-dialog-box nil
-   mark-even-if-inactive nil
-   kill-whole-line t
-   case-fold-search nil
-   echo-keystrokes .1
-   frame-resize-pixelwise t
-   show-paren-delay 0)
-
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
 (global-hl-line-mode)
 (global-visual-line-mode)
-(electric-pair-mode)
-(delete-selection-mode t)
-(show-paren-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (blink-cursor-mode 0)
-(put 'dired-find-alternate-file 'disabled nil)
-
-(set-frame-font "Office Code Pro 15" nil t)
+(show-paren-mode)
+(electric-pair-mode)
+(ido-mode t)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(defvar emacs-folder "/home/HDD/Documents/emacs/"
-  "Folder to store various emacs (non-config) files")
-
-(setq org-agenda-start-on-weekday nil
-      org-agenda-files (list emacs-folder)
-      org-default-notes-file (concat emacs-folder "Self.org")
-      org-file-apps '((auto-mode . emacs)))
+(set-frame-font "Fira Code Retina 15")
 
 ;; Packages
 
@@ -80,7 +75,50 @@
 	  scheme-mode
 	  clojure-mode) . paredit-mode))
 
-(use-package atom-one-dark-theme
+(use-package all-the-icons
+  :ensure t)
+
+(use-package centaur-tabs
+  :after all-the-icons
+  :ensure t
+  :demand t
+  :init
+  (setq centaur-tabs-style "bar"
+	centaur-tabs-set-icons t
+	centaur-tabs-height 35
+	centaur-tabs-set-modified-marker t)
+  :config
+  (centaur-tabs-mode t)
+  (centaur-tabs-headline-match)
+  (centaur-tabs-group-by-projectile-project)
+  :bind
+  ("C-<prior>" . centaur-tabs-backward)
+  ("C-<next>" . centaur-tabs-forward))
+
+(use-package neotree
   :ensure t
   :config
-  (load-theme 'atom-one-dark t))
+  (setq neo-smart-open t
+	projectile-switch-project-action 'neotree-projectile-action)
+  :bind
+  ([f8] . 'neotree-toggle))
+
+(use-package org-superstar
+  :ensure t
+  :hook
+  ((org-mode) . (lambda () (org-superstar-mode 1))))
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
+
+(use-package doom-themes
+  :ensure t
+  :config
+  (setq doom-themes-enable-bold t
+	doom-themes-enable-italic t
+	doom-themes-neotree-enable-file-icons t
+	doom-themes-neotree-enable-folder-icons t)
+  (load-theme 'doom-one t)
+  (doom-themes-neotree-config)
+  (doom-themes-org-config))
