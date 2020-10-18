@@ -442,17 +442,17 @@
     <!-- Audio volume control -->
     <keybind key="W-v">
       <action name="Execute">
-        <command>amixer set Master 5%+</command>
+        <command>amixer set Headphone 5%+</command>
       </action>
     </keybind>
     <keybind key="W-S-v">
       <action name="Execute">
-        <command>amixer set Master 5%-</command>
+        <command>amixer set Headphone 5%-</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>amixer set Master toggle</command>
+        <command>amixer set Headphone toggle</command>
       </action>
     </keybind>
     <!-- Show clock when Super + c is pressed -->
