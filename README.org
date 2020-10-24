@@ -1,6 +1,6 @@
 * Theming
-  - *Theme*: [[https://www.gnome-look.org/p/1267246/][Nordic-bluish-accent]]
-  - *Font*: [[https://github.com/microsoft/cascadia-code][Cascadia Code]]
+  - *Theme*: [[https://draculatheme.com/][Dracula]]
+    - *Openbox Theme*: [[https://www.box-look.org/p/1383003][Dracula]]
   - *Icons*: [[https://github.com/gusbemacbe/suru-plus-aspromauros][Suru++ Aspromauros]]
 
 * Openbox Keybindings
