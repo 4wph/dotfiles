@@ -37,7 +37,7 @@
       <separator/>
       <item label="Steam">
 	<action name="Execute">
-	  <execute>steam</execute>
+	  <execute>steam -noverifyfiles</execute>
 	</action>
       </item>
       <item label="Beatoraja">
