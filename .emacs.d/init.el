@@ -57,15 +57,6 @@
   :config
   (evil-mode 1))
 
-(use-package projectile
-  :ensure t
-  :init
-  (setq projectile-project-search-path '("/home/HDD/Documents/7CC"))
-  :config
-  (projectile-mode +1)
-  :bind-keymap
-  ("C-c p" . projectile-command-map))
-
 (use-package paredit
   :ensure t
   :hook ((emacs-lisp-mode
@@ -74,6 +65,15 @@
 	  lisp-interaction-mode
 	  scheme-mode
 	  clojure-mode) . paredit-mode))
+
+(use-package projectile
+  :ensure t
+  :init
+  (setq projectile-project-search-path '("/home/HDD/Documents/7CC"))
+  :config
+  (projectile-mode +1)
+  :bind-keymap
+  ("C-c p" . projectile-command-map))
 
 (use-package all-the-icons
   :ensure t)

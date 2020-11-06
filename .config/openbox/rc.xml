@@ -64,7 +64,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>sans</name>
+      <name>Inconsolata</name>
       <size>8</size>
       <!-- font size in points -->
       <weight>bold</weight>
@@ -353,7 +353,7 @@
     </keybind>
     <keybind key="A-Print">
       <action name="Execute">
-        <command>scrot -s /home/HDD/Pictures/Screenshots/%m%d-%H%M%S.png</command>
+        <command>~/.local/bin/screen2clip</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
