@@ -29,6 +29,11 @@
 	  <execute>qutebrowser</execute>
 	</action>
       </item>
+      <item label="VSCode">
+	<action name="Execute">
+	  <execute>/home/HDD/Downloads/Apps/VSCodium/codium</execute>
+	</action>
+      </item>
       <item label="Emacs">
 	<action name="Execute">
 	  <execute>emacs</execute>
@@ -40,31 +45,15 @@
 	  <execute>steam -noverifyfiles</execute>
 	</action>
       </item>
-      <item label="Beatoraja">
-	<action name="Execute">
-	  <execute>/home/HDD/Downloads/Apps/beatoraja/beatoraja-config.command</execute>
-	</action>
-      </item>
       <item label="Minecraft">
 	<action name="Execute">
 	  <execute>/home/HDD/SkaiaCraft/start.sh</execute>
-	</action>
-      </item>
-
-      <item label="Battle.net">
-	<action name="Execute">
-	  <execute>wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Battle.net/Battle.net\ Launcher.exe</execute>
 	</action>
       </item>
       <separator/>
       <item label="Discord">
 	<action name="Execute">
 	  <execute>discord</execute>
-	</action>
-      </item>
-      <item label="Spotify">
-	<action name="Execute">
-	  <execute>spotify</execute>
 	</action>
       </item>
       <item label="InFirefox">

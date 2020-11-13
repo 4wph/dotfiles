@@ -1,0 +1,89 @@
+[
+    {
+      "key": "shift+ctrl+e",
+      "command": "actions.findWithSelection"
+    },
+    {
+      "key": "ctrl+j",
+      "command": "selectNextSuggestion",
+      "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+      "key": "ctrl+k",
+      "command": "selectPrevSuggestion",
+      "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+      "key": "ctrl+j",
+      "command": "workbench.action.quickOpenNavigateNext",
+      "when": "inQuickOpen"
+    },
+    {
+      "key": "tab",
+      "command": "selectNextSuggestion",
+      "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+      "key": "tab",
+      "command": "workbench.action.quickOpenNavigateNext",
+      "when": "inQuickOpen"
+    },
+    {
+      "key": "shift+tab",
+      "command": "selectPrevSuggestion",
+      "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+      "key": "shift+tab",
+      "command": "selectPrevSuggestion",
+      "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+      "key": "shift+tab",
+      "command": "workbench.action.quickOpenNavigatePrevious",
+      "when": "inQuickOpen"
+    },
+    {
+      "key": "ctrl+k",
+      "command": "workbench.action.quickOpenNavigatePrevious",
+      "when": "inQuickOpen"
+    },
+    {
+      "key": "enter",
+      "command": "list.select",
+      "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+      "key": "ctrl+l",
+      "when": "sideBarFocus",
+      "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+      "key": "ctrl+k",
+      "command": "workbench.action.focusActiveEditorGroup",
+      "when": "terminalFocus"
+    },
+    {
+      "key": "ctrl+t",
+      "command": "workbench.action.togglePanel"
+    },
+    {
+      "key": "ctrl+j",
+      "command": "-workbench.action.togglePanel"
+    },
+    {
+      "key": "shift+k",
+      "command": "editor.action.showHover",
+      "when": "editorTextFocus && neovim.mode != 'insert'"
+    },
+    {
+      "key": "shift+tab",
+      "command": "-acceptAlternativeSelectedSuggestion",
+      "when": "suggestWidgetVisible && textInputFocus && textInputFocus"
+    },
+    {
+      "key": "escape",
+      "command": "-notebook.cell.quitEdit",
+      "when": "inputFocus && notebookEditorFocused && !editorHasSelection && !editorHoverVisible"
+    },
+]
