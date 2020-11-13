@@ -21,40 +21,13 @@
     "update.showReleaseNotes": false,
     "workbench.editor.restoreViewState": false,
     "window.zoomLevel": 3,
-    "workbench.colorTheme": "Dracula",
     "window.restoreWindows": "none",
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.folders.theme": "specific",
     "material-icon-theme.opacity": 0.7,
     "editor.scrollbar.horizontal": "hidden",
     "editor.scrollbar.vertical": "hidden",
-    "customizeUI.stylesheet": {
-        ".editor-actions": "display: none !important;",
-      },
-    "workbench.colorCustomizations": {
-        "[Dracula]": {
-            "statusBar.background": "#282A36",
-            "statusBar.noFolderBackground": "#282A36",
-            "statusBar.foreground": "#6272A4",
-            "statusBar.noFolderForeground": "#6272A4",
-            "statusBar.border": "#282A36",
-            "activityBar.background": "#282A36",
-            "activityBar.border": "#282A36",
-            "titleBar.border": "#282A36",
-            "titleBar.activeBackground": "#282A36",
-            "titleBar.inactiveBackground": "#282A36",
-            "tab.inactiveForeground": "#6272A4",
-            "tab.inactiveBackground": "#282A36",
-            "tab.border": "#282A36",
-            "sideBar.background": "#282A36",
-            "sideBar.border": "#282A36",
-            "focusBorder": "#282A36",
-            "scrollbar.shadow": "#ffffff00",
-            "widget.shadow": "#ffffff00",
-            "editorGroupHeader.border": "#282A36",
-            "editorGroupHeader.tabsBackground": "#282A36",
-            "editorOverviewRuler.border": "#282A36"
-        }
-    },
-    "vscode-neovim.neovimExecutablePaths.linux": "/home/HDD/Downloads/Apps/nvim/nvim-linux64/bin/nvim"
+    "workbench.colorTheme": "Flamingo Nebula",
+    "vscode-neovim.neovimExecutablePaths.linux": "/home/HDD/Downloads/Apps/nvim/nvim-linux64/bin/nvim",
+    "window.autoDetectHighContrast": false
 }
