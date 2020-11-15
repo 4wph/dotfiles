@@ -23,17 +23,14 @@
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
-(global-hl-line-mode)
 (global-visual-line-mode)
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(blink-cursor-mode 0)
 (show-paren-mode)
 (electric-pair-mode)
 (ido-mode t)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(set-frame-font "Fira Code Retina 15")
+(set-frame-font "Jet Brains Mono 15" nil t)
 
 ;; Packages
 
@@ -75,50 +72,12 @@
   :bind-keymap
   ("C-c p" . projectile-command-map))
 
-(use-package all-the-icons
-  :ensure t)
-
-(use-package centaur-tabs
-  :after all-the-icons
-  :ensure t
-  :demand t
-  :init
-  (setq centaur-tabs-style "bar"
-	centaur-tabs-set-icons t
-	centaur-tabs-height 35
-	centaur-tabs-set-modified-marker t)
-  :config
-  (centaur-tabs-mode t)
-  (centaur-tabs-headline-match)
-  (centaur-tabs-group-by-projectile-project)
-  :bind
-  ("C-<prior>" . centaur-tabs-backward)
-  ("C-<next>" . centaur-tabs-forward))
-
-(use-package neotree
-  :ensure t
-  :config
-  (setq neo-smart-open t
-	projectile-switch-project-action 'neotree-projectile-action)
-  :bind
-  ([f8] . 'neotree-toggle))
-
 (use-package org-superstar
   :ensure t
   :hook
   ((org-mode) . (lambda () (org-superstar-mode 1))))
 
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1))
-
-(use-package doom-themes
+(use-package dracula-theme
   :ensure t
   :config
-  (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t
-	doom-themes-neotree-enable-file-icons t
-	doom-themes-neotree-enable-folder-icons t)
-  (load-theme 'doom-one t)
-  (doom-themes-neotree-config)
-  (doom-themes-org-config))
+  (load-theme 'dracula t))

@@ -31,7 +31,7 @@
       </item>
       <item label="VSCode">
 	<action name="Execute">
-	  <execute>/home/HDD/Downloads/Apps/VSCodium/codium</execute>
+	  <execute>codium</execute>
 	</action>
       </item>
       <item label="Emacs">

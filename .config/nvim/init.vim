@@ -24,6 +24,14 @@ if !exists('g:vscode')
 
 	colorscheme dracula
 else
+	call plug#begin(stdpath('data') . '/plugged')
+
+	Plug 'guns/vim-sexp'
+	Plug 'tpope/vim-sexp-mappings-for-regular-people'
+	Plug 'tpope/vim-surround'
+
+	call plug#end()
+
 	xmap gc  <Plug>VSCodeCommentary
 	nmap gc  <Plug>VSCodeCommentary
 	omap gc  <Plug>VSCodeCommentary
