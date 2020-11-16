@@ -54,6 +54,7 @@
   :config
   (evil-mode 1))
 
+
 (use-package paredit
   :ensure t
   :hook ((emacs-lisp-mode
@@ -70,7 +71,10 @@
   :config
   (projectile-mode +1)
   :bind-keymap
-  ("C-c p" . projectile-command-map))
+  ("C-c p" . projectile-command-map)
+  :bind (("C-c f" . projectile-find-file)
+	 ("C-c o" . projectile-switch-project)
+	 ("C-c k" . projectile-kill-buffers)))
 
 (use-package org-superstar
   :ensure t

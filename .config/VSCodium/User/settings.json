@@ -22,12 +22,11 @@
     "workbench.editor.restoreViewState": false,
     "window.zoomLevel": 3,
     "window.restoreWindows": "none",
+    "window.autoDetectHighContrast": false,
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.folders.theme": "specific",
     "material-icon-theme.opacity": 0.7,
     "editor.scrollbar.horizontal": "hidden",
     "editor.scrollbar.vertical": "hidden",
-    "workbench.colorTheme": "Flamingo Nebula",
-    "vscode-neovim.neovimExecutablePaths.linux": "/home/HDD/Downloads/Apps/nvim/nvim-linux64/bin/nvim",
-    "window.autoDetectHighContrast": false
+    "workbench.colorTheme": "Flamingo Nebula"
 }
