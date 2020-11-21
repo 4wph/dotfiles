@@ -21,7 +21,6 @@
 	<execute>thunar</execute>
       </action>
     </item>
-    <!-- This requires the presence of the 'openbox-menu' package to work -->
     <separator/>
     <menu id="Games etc" label="Stuff">
       <item label="Browser">

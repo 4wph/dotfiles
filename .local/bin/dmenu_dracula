@@ -1,0 +1,3 @@
+#!/bin/sh
+
+dmenu_run -nb '#282a36' -nf '#f8f8f2' -sb '#bd93f9'

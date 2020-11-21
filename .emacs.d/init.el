@@ -18,7 +18,8 @@
  show-paren-delay 0
  ido-enable-flex-matching t
  ido-separator "\n"
- ido-everywhere t)
+ ido-everywhere t
+ custom-file "~/.emacs.d/custom.el")
 
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
@@ -49,11 +50,34 @@
 (use-package clojure-mode
   :ensure t)
 
+(use-package haskell-mode
+  :ensure t)
+
+(use-package lua-mode
+  :ensure t)
+
 (use-package evil
   :ensure t
   :config
   (evil-mode 1))
 
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+
+(use-package evil-snipe
+  :ensure t
+  :config
+  (evil-snipe-mode +1)
+  (evil-snipe-override-mode +1)
+  :custom
+  (evil-snipe-scope 'buffer))
+
+(use-package smart-tab
+  :ensure t
+  :config
+  (global-smart-tab-mode 1))
 
 (use-package paredit
   :ensure t
@@ -84,4 +108,8 @@
 (use-package dracula-theme
   :ensure t
   :config
-  (load-theme 'dracula t))
+  (load-theme 'dracula t)
+  (set-face-attribute 'font-lock-comment-face nil :slant 'italic)
+  (set-face-attribute 'font-lock-function-name-face nil :slant 'italic)
+  (set-face-attribute 'font-lock-variable-name-face nil :slant 'italic)
+  (set-face-attribute 'font-lock-string-face nil :slant 'italic))
