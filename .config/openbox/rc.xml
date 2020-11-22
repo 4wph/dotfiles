@@ -24,39 +24,39 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
-      <name>Insonsolata</name>
-      <size>11</size>
-      <weight>bold</weight>
+      <name>Comfortaa</name>
+      <size>8</size>
+      <weight>Light</weight>
       <slant>normal</slant>
     </font>
     <font place="InactiveWindow">
-      <name>Inconsolata</name>
-      <size>8</size>
-      <weight>bold</weight>
+      <name>Comfortaa</name>
+      <size>6</size>
+      <weight>Light</weight>
       <slant>normal</slant>
     </font>
     <font place="MenuHeader">
-      <name>Inconsolata</name>
-      <size>14</size>
-      <weight>bold</weight>
+      <name>Comfortaa</name>
+      <size>12</size>
+      <weight>Light</weight>
       <slant>normal</slant>
     </font>
     <font place="MenuItem">
-      <name>Inconsolata</name>
-      <size>14</size>
-      <weight>bold</weight>
+      <name>Comfortaa</name>
+      <size>12</size>
+      <weight>Light</weight>
       <slant>normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Inconsolata</name>
-      <size>16</size>
-      <weight>bold</weight>
+      <name>Comfortaa</name>
+      <size>14</size>
+      <weight>Light</weight>
       <slant>normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Inconsolata</name>
-      <size>16</size>
-      <weight>bold</weight>
+      <name>Comfortaa</name>
+      <size>14</size>
+      <weight>Light</weight>
       <slant>normal</slant>
     </font>
   </theme>
@@ -236,7 +236,19 @@
     <keybind key="W-m">
       <action name="ToggleMaximize"/>
     </keybind>
-    <keybind key="A-space">
+    <keybind key="W-Tab">
+      <action name="NextWindow">
+	<dialog>no</dialog>
+	<bar>no</bar>
+	<interactive>no</interactive>
+        <finalactions>
+          <action name="Focus"/>
+          <action name="Raise"/>
+          <action name="Unshade"/>
+        </finalactions>
+      </action>
+    </keybind>
+    <keybind key="W-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
       </action>
@@ -253,11 +265,11 @@
     </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
+	<finalactions>
+	  <action name="Focus"/>
+	  <action name="Raise"/>
+	  <action name="Unshade"/>
+	</finalactions>
       </action>
     </keybind>
     <keybind key="A-S-Tab">
