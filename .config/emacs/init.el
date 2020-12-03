@@ -19,7 +19,7 @@
  ido-enable-flex-matching t
  ido-separator "\n"
  ido-everywhere t
- custom-file "~/.emacs.d/custom.el")
+ custom-file "~/.config/emacs/custom.el")
 
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)

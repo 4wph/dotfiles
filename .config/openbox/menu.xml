@@ -18,7 +18,7 @@
     </item>
     <item label="Thunar">
       <action name="Execute">
-	<execute>thunar</execute>
+	<execute>pcmanfm</execute>
       </action>
     </item>
     <separator/>
@@ -101,7 +101,7 @@
     <menu id="root-menu-125923" label="Programs">
       <item label="Mousepad">
 	<action name="Execute">
-	  <execute>mousepad</execute>
+	  <execute>leafpad</execute>
 	</action>
       </item>
       <item label="LibreOffice">

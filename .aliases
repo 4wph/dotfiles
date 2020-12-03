@@ -5,19 +5,18 @@ alias egrep='egrep --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias uskb='setxkbmap -layout us'
-alias em='emacs -nw'
-alias vi='nvim'
-alias v='/home/HDD/Downloads/Apps/nvim/nvim'
-alias steam='steam -noverifyfiles'
-alias toprojects='cd /home/HDD/Documents/7CC/'
-alias toapps='cd /home/HDD/Downloads/Apps/'
-alias tohdd='cd /home/HDD/'
-alias apulse='/home/HDD/Downloads/Apps/apulse/build/apulse'
-alias sbai='firejail --appimage --private'
-alias discaudio='/home/HDD/Downloads/Apps/apulse/build/apulse /home/HDD/Downloads/Apps/ungoogled-chromium_83.0.4103.97-1.1_linux.AppImage "discord.com"'
+alias uskb="setxkbmap -layout us"
+alias em="emacs -nw"
+alias v='nvim'
+alias k="kak"
+alias steam="steam -noverifyfiles"
+alias toprojects="cd $PROJECTS"
+alias toapps="cd $APPS"
+alias tohdd="cd /home/HDD/"
+alias apulse="$APPS/apulse/build/apulse"
+alias sbai="firejail --appimage --private"
 alias webtree='tree -I "node_modules|.git|cljs-runtime"'
-alias citra='/home/HDD/Downloads/Apps/citra/build/bin/Release/citra-qt'
+alias citra="$APPS/citra/build/bin/Release/citra-qt"
 
 ex ()
 {
@@ -43,3 +42,5 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+# vim: set filetype=sh :

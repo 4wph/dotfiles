@@ -2,9 +2,11 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-xsetroot -cursor_name left_ptr
-/home/a2lqr4/.config/polybar/launch.sh
+xsetroot -cursor_name left_ptr &
+xset s off &
+xset -dpms &
 nitrogen --restore &
+/home/a2lqr4/.config/polybar/launch.sh
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 

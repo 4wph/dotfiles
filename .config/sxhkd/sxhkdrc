@@ -14,7 +14,7 @@ super + b
 	qutebrowser
 
 super + e
-	thunar
+	pcmanfm
 
 super + control + e
 	emacs
@@ -32,6 +32,9 @@ super + v
 super + shift + v
 	amixer set Headphone 5%-
 
+super + control + v
+	amixer set Headphone toggle
+
 Print
 	scrot -s /home/HDD/Pictures/Leticia/Screenshots/%m%d-%H%M%S.png
 
@@ -43,12 +46,12 @@ alt + Print
 #
 
 # quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
+super + alt + r
+	bspc wm -r
 
 # close and kill
 super + q
-	bspc node -k
+	bspc node -c
 
 # alternate between the tiled and monocle layout
 super + shift + m
