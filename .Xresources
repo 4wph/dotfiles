@@ -17,3 +17,10 @@
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
+
+emacs.cursorColor: white
+emacs.default.attributeHeight: 150
+emacs.menuBar: 0
+emacs.toolBar: 0
+emacs.verticalScrollBars: off
+emacs.horizontalScrollBars: off

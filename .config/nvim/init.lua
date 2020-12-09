@@ -38,19 +38,7 @@ vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"'
 
 local lspconfig = require'lspconfig'
 local configs = require('lspconfig/configs')
-if not lspconfig.clojure_lsp then
-	configs.clojure_lsp = {
-		default_config = {
-			cmd = {'clojure-lsp'};
-			filetypes = {'clojure'};
-			root_dir = function(fname)
-				return lspconfig.util.find_git_ancestor(fname) or vim.loop.os_homedir()
-			end;
-			settings = {};
-		};
-	}
-end
-local servers = {'jsonls', 'tsserver', 'html', 'clojure_lsp', 'angularls', 'cssls'}
+local servers = {'jsonls', 'tsserver', 'html', 'clojure_lsp', 'angularls', 'cssls', 'texlab'}
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup{}
 end
