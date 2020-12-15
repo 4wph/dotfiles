@@ -10,13 +10,13 @@ require('packer').startup(function()
 	use 'ctrlpvim/ctrlp.vim'
 
 	use 'nvim-treesitter/nvim-treesitter'
-	use 'ChristianChiarulli/nvcode-color-schemes.vim'
 
 	use 'neovim/nvim-lspconfig'
 	use 'nvim-lua/completion-nvim'
+	use 'arcticicestudio/nord-vim'
 end)
 
-vim.cmd('colorscheme snazzy')-- FIXME
+vim.cmd('colorscheme nord')-- FIXME
 vim.cmd('autocmd BufEnter * lua require\'completion\'.on_attach()')-- FIXME
 
 vim.g.ctrlp_user_command = { '.git', 'cd %s && git ls-files -co --exclude-standard' }
@@ -39,9 +39,11 @@ vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"'
 local lspconfig = require'lspconfig'
 local configs = require('lspconfig/configs')
 local servers = {'jsonls', 'tsserver', 'html', 'clojure_lsp', 'angularls', 'cssls', 'texlab'}
+
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup{}
 end
+
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all",
   highlight = {

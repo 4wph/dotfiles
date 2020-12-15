@@ -1,17 +1,4 @@
-import dracula.draw
-
-# clone into ~/.config/qutebrowser/
-# git clone https://github.com/dracula/qutebrowser-dracula-theme.git dracula
-config.load_autoconfig()
-
-dracula.draw.blood(c, {
-    'spacing': {
-        'vertical': 6,
-        'horizontal': 8
-    }
-})
-
-config.set('fonts.default_family', 'Comfortaa')
+config.set('fonts.default_family', 'Source Code Pro')
 
 c.content.private_browsing = True
 
@@ -33,3 +20,5 @@ c.url.start_pages = 'https://duckduckgo.com/?k7=282a36&k8=f8f8f2&k9=50fa7b&kae=t
 
 c.colors.downloads.system.bg = 'none'
 c.colors.tabs.indicator.system = 'none'
+
+config.source('nord-qutebrowser.py')

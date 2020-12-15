@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-	dmenu_run -h 30 -nb '#282a36' -nf '#f8f8f2' -sb '#bd93f9' -fn 'Comfortaa'
+	dmenu_run -h 30 -nb '#3b4252' -nf '#8fbcbb' -sb '#8fbcbb' -sf '#3b5252' -fn 'Source Code Pro'
 
 super + b
 	qutebrowser

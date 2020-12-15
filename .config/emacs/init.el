@@ -1,23 +1,3 @@
-(setq
- make-backup-files nil
- auto-save-default nil
- create-lockfiles nil
- frame-resize-pixelwise t
- show-paren-delay 0
- ido-enable-flex-matching t
- ido-everywhere t
- custom-file "~/.config/emacs/custom.el")
-
-(global-visual-line-mode)
-(show-paren-mode)
-(electric-pair-mode)
-(ido-mode t)
-
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-(setq viper-mode t)
-(require 'viper)
-
 ;; Packages
 
 (require 'package)
@@ -25,15 +5,19 @@
 (package-initialize)
 (when (not package-archive-contents)
     (package-refresh-contents))
-
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
-
 (eval-when-compile
   (require 'use-package))
+(setq use-package-always-ensure t)
+
+(add-to-list 'load-path "~/.config/emacs/elegant-emacs")
+(require 'elegance)
+(require 'sanity)
+
+(require 'org)
 
 (use-package projectile
-  :ensure t
   :init
   (setq projectile-project-search-path '("/home/HDD/Documents/7CC"))
   :config
@@ -44,7 +28,23 @@
 	 ("C-c o" . projectile-switch-project)
 	 ("C-c k" . projectile-kill-buffers)))
 
-(use-package org-superstar
-  :ensure t
-  :hook
-  ((org-mode) . (lambda () (org-superstar-mode 1))))
+;; Key Bindings
+
+(global-set-key (kbd "C-c i") (lambda () (interactive) (find-file user-init-file)))
+
+;; Settings
+
+(setq
+ frame-resize-pixelwise t
+ split-height-threshold nil
+ split-width-threshold 0
+ make-backup-files nil
+ create-lockfiles nil
+ auto-save-default nil
+ org-hide-leading-stars t
+ org-format-latex-options (plist-put org-format-latex-options :scale 2.0)
+ custom-file "~/.config/emacs/custom.el")
+
+(menu-bar-mode -1)
+
+(add-to-list 'org-file-apps '("\\.pdf\\'" . emacs))

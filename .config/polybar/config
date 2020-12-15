@@ -1,54 +1,78 @@
-; https://github.com/oddlyspaced/dotfiles/tree/dracula-manjaro
-
 [colors]
-background = #282a36
-background-alt = #d1c4e99
-foreground = #f8f8f2
+;background = ${xrdb:color0:#222}
+;nord 10
+background = #3b4252
+background-alt = #444
+background-desktop = #8fbcbb
+background-battery-nord = #81A1C1
+background-wlan-nord = #BF616A 
+background-cpu-nord = #D08770 
+background-memory-nord = #B48EAD
+background-volume-nord = #EBCB8B 
+;foreground = ${xrdb:color7:#222}
+;nord 6
+foreground = #3b4252 
 foreground-alt = #555
 primary = #ffb52a
-secondary = #e60053
-alert = #ff5555
+secondary = #81a1c1
+alert = #bf616a
 
-[bar/example]
+[hacks]
+;Allow padding of modules while keeping the formatted background colour we've set
+module-margin = "   "
+
+
+[bar/bar1]
+;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 30
-radius = 0.0
+;offset-x = 1%
+;offset-y = 50%
+radius = 0
 fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-padding-left = 0
-padding-right = 0
+line-size = 0
+line-color = #f00
 
-module-margin-left = 1
-module-margin-right = 1
+border-size = 0
+border-color = #88C0D0
 
-font-0 = "Comfortaa"
-font-1 = "Material Icons:pixelsize=11;2"
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 2
+module-margin-right = 0
+;Usefull because some icons have weird heights
+font-0 = FontAwesome:size=12;1
+font-1 = FontAwesome:size=12;2
+font-2 = "Source Code Pro:size=12;1"
+font-3 = siji:pixelsize=12;1
 
 modules-left = bspwm
 modules-center = windowtitle
-modules-right = volume battery network cpu date shutdown
+modules-right = volume eth date
+
+wm-restack = bspwm
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
+;tray-transparent = true
+tray-background = #bf616a
 
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/bspwm]
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = #6272a4
+label-focused-background = #8fbcbb
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
 label-occupied-padding = 2
+label-occupied-foreground = "#dddddd"
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
@@ -58,95 +82,73 @@ label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
-; Separator in between workspaces
-; label-separator = |
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/windowtitle]
 type = internal/xwindow
 format = <label>
 label = %title%
 label-maxlen = 100
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/volume]
-type = internal/alsa
-master-mixer = Headphone
-format-volume =  "<ramp-volume> <label-volume> "
-ramp-volume-0 =""
-ramp-volume-0-font = 2
-ramp-volume-1 = ""
-ramp-volume-1-font = 2
-ramp-volume-2 =" "
-ramp-volume-2-font = 2
-format-volume-background = #ffb86c
-format-volume-foreground = #000
+format-foreground = "#8fbcbb"
 
-format-muted = <label-muted>
-format-muted-background = #ffb86c
-format-muted-foreground = #000
-label-muted ="  "
-format-muted-font = 2
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/network]
+[module/eth]
 type = internal/network
 interface = enp3s0
-format-connected = <label-connected>
-format-connected-prefix = " "
-format-connected-prefix-font = 2
-label-connected = " %local_ip% "
-label-connected-font = 1
+interval = 3.0
 
-format-disconnected = <label-disconnected>
-label-disconnected = 
-label-disconnected-font = 2
+format-connected-underline = #55aa55
+format-connected-prefix = "  "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = "%local_ip% "
 
-format-connected-background = #8be9fd
-format-connected-foreground = #000
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+format-connected-background = ${colors.background-wlan-nord}
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-foreground = #000
-format-background = #50fa7b
-label = "%percentage:2%% "
-format-prefix-font = 2
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
-interval = 1
+interval = 5
 
-date = 
-date-alt = "%A, %b %d"
+date =
+date-alt = " %Y-%m-%d"
 
-time = "%I:%M %p "
-time-alt = "%I:%M:%S %p "
-
-format-prefix = " "
-format-prefix-font = 2
-format-prefix-foreground = #000
-format-background = #ff79c6
-format-foreground = #000
+time = %H:%M 
+time-alt = %H:%M:%S  
+;have to manually insert module margins here
+format-prefix = "    "
+format-suffix = ${hacks.module-margin}
+format-prefix-foreground = ${colors.foreground}
+format-underline = #0a6cf5
+;nord 9
+format-background = #a3be8c
 
 label = %date% %time%
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/shutdown]
-type = custom/text
-content = 
-content-background = #ad1457
-content-padding = 2
-click-left = poweroff
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
 
-; [global/wm]
-; margin-top = 5
-; margin-bottom = 5
+[module/volume]
+type = internal/alsa
+master-mixer = Headphone
+
+format-volume = <label-volume>
+label-volume =   %percentage%
+label-volume-background = ${colors.background-volume-nord}
+format-volume-prefix = ${hacks.module-margin}
+format-volume-suffix = ${hacks.module-margin}
+format-muted-prefix = ${hacks.module-margin}
+format-muted-suffix = ${hacks.module-margin}
+format-muted-foreground = ${colors.foreground}
+label-muted-background = ${colors.background-volume-nord}
+format-volume-foreground = ${colors.foreground}
+format-volume-prefix-background = ${colors.background-volume-nord}
+format-volume-suffix-background = ${colors.background-volume-nord}
+format-muted-suffix-background = ${colors.background-volume-nord}
+format-muted-prefix-background = ${colors.background-volume-nord}
+label-muted =   %percentage% 
+format-muted = <label-muted>
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
 
 ; vim:ft=dosini
