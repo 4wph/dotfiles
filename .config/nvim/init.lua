@@ -22,7 +22,7 @@ vim.cmd('autocmd BufEnter * lua require\'completion\'.on_attach()')-- FIXME
 vim.g.ctrlp_user_command = { '.git', 'cd %s && git ls-files -co --exclude-standard' }
 vim.g.completion_matching_strategy_list = { 'exact', 'substring', 'fuzzy' }
 
-vim.o.cot = "menuone,noinsert,noselect"
+vim.o.cot = 'menuone,noinsert,noselect'
 vim.o.termguicolors = true
 
 vim.cmd('command! Format execute \'lua vim.lsp.buf.formatting()\'')-- FIXME
@@ -45,7 +45,7 @@ for _, lsp in ipairs(servers) do
 end
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
+  ensure_installed = 'all',
   highlight = {
     enable = true,
   },

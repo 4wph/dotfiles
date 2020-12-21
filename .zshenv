@@ -7,6 +7,7 @@ export LEIN_HOME=$XDG_DATA_HOME/lein
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export WINEPREFIX=$XDG_DATA_HOME/wineprefixes/default
 export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+export HDD=/home/HDD
 export DOCUMENTS=/home/HDD/Documents
 export APPS=/home/HDD/Downloads/Apps
 export DOWNLOADS=/home/HDD/Downloads

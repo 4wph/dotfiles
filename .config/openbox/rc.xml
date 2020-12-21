@@ -19,7 +19,7 @@
     <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
-    <name>Dracula</name>
+    <name>Vedanta-dark</name>
     <titleLayout>CML</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>no</animateIconify>
@@ -63,7 +63,7 @@
   <desktops>
     <number>4</number>
     <firstdesk>1</firstdesk>
-    <names></names>
+    <names/>
     <popupTime>800</popupTime>
   </desktops>
   <resize>
@@ -238,9 +238,9 @@
     </keybind>
     <keybind key="W-Tab">
       <action name="NextWindow">
-	<dialog>no</dialog>
-	<bar>no</bar>
-	<interactive>no</interactive>
+        <dialog>no</dialog>
+        <bar>no</bar>
+        <interactive>no</interactive>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -265,11 +265,11 @@
     </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow">
-	<finalactions>
-	  <action name="Focus"/>
-	  <action name="Raise"/>
-	  <action name="Unshade"/>
-	</finalactions>
+        <finalactions>
+          <action name="Focus"/>
+          <action name="Raise"/>
+          <action name="Unshade"/>
+        </finalactions>
       </action>
     </keybind>
     <keybind key="A-S-Tab">
@@ -294,7 +294,7 @@
     </keybind>
     <keybind key="W-d">
       <action name="Execute">
-	<command>~/.local/bin/dmenu_dracula</command>
+        <command>~/.local/bin/dmenu_dracula</command>
       </action>
     </keybind>
     <keybind key="W-e">
@@ -585,6 +585,9 @@
           <to>next</to>
         </action>
       </mousebind>
+    </context>
+    <context name="Titlebar">
+      <mousebind button="Left" action="DoubleClick"/>
     </context>
   </mouse>
   <menu>
