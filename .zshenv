@@ -1,7 +1,7 @@
-export PATH=$PATH:~/.local/bin/
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
+export PATH=$PATH:~/.local/bin/:$XDG_DATA_HOME/npm/bin/
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
 export LEIN_HOME=$XDG_DATA_HOME/lein
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
