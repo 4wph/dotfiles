@@ -13,7 +13,8 @@ require('packer').startup(function()
 
 	use 'neovim/nvim-lspconfig'
 	use 'nvim-lua/completion-nvim'
-	use 'arcticicestudio/nord-vim'
+
+	use 'ChristianChiarulli/nvcode-color-schemes.vim'
 end)
 
 vim.cmd('colorscheme nord')-- FIXME
@@ -25,6 +26,11 @@ vim.g.completion_matching_strategy_list = { 'exact', 'substring', 'fuzzy' }
 vim.o.cot = 'menuone,noinsert,noselect'
 vim.o.termguicolors = true
 
+vim.g.netrw_liststyle = 3
+vim.g.netrw_banner = 0
+vim.g.netrw_browse_split = 4
+vim.g.netrw_winsize = 15
+
 vim.cmd('command! Format execute \'lua vim.lsp.buf.formatting()\'')-- FIXME
 vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
@@ -35,6 +41,8 @@ vim.api.nvim_set_keymap('n', '<Leader>xr', '<cmd>lua vim.lsp.buf.rename()<CR>', 
 vim.api.nvim_set_keymap('n', '<Leader>xd', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {noremap = true, expr = true})
 vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {noremap = true, expr = true})
+
+vim.api.nvim_set_keymap('n', '<F8>', '<cmd>Vexplore<CR>', {noremap = true})
 
 local lspconfig = require'lspconfig'
 local configs = require('lspconfig/configs')
