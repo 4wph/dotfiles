@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-	dmenu_run -h 30 -nb '#3b4252' -nf '#8fbcbb' -sb '#8fbcbb' -sf '#3b5252' -fn 'Source Code Pro'
+	dmenu_run -h 30 -nb '#1e2127' -nf '#eff0eb' -sb '#9AEDFE' -sf '#1e2127' -fn 'Source Code Pro'
 
 super + b
 	qutebrowser
@@ -18,6 +18,9 @@ super + e
 
 super + control + e
 	emacs
+
+super + c
+	/home/HDD/Downloads/Apps/codium/codium
 
 super + x
 	scrot /home/HDD/Pictures/Screenshots/%m%d-%H%M%S.png

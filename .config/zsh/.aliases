@@ -6,6 +6,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias apulse="$APPS/apulse/build/apulse"
+alias sb="firejail --private --allusers"
 alias sbai="firejail --appimage --private"
 alias webtree='tree -I "node_modules|.git|cljs-runtime"'
 alias citra="$APPS/citra/build/bin/Release/citra-qt"

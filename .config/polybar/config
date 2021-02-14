@@ -1,19 +1,19 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 ;nord 10
-background = #3b4252
+background = #1e2127
 background-alt = #444
 background-desktop = #8fbcbb
-background-battery-nord = #81A1C1
-background-wlan-nord = #BF616A 
-background-cpu-nord = #D08770 
-background-memory-nord = #B48EAD
-background-volume-nord = #EBCB8B 
+background-battery = #81A1C1
+background-wlan = #F3F99D
+background-cpu = #D08770 
+background-memory = #B48EAD
+background-volume = #5AF78E
 ;foreground = ${xrdb:color7:#222}
 ;nord 6
-foreground = #3b4252 
-foreground-alt = #555
-primary = #ffb52a
+foreground = #eff0eb
+foreground-alt = #282a36
+primary = #eff0eb
 secondary = #81a1c1
 alert = #bf616a
 
@@ -60,13 +60,14 @@ wm-restack = bspwm
 tray-position = right
 tray-padding = 2
 ;tray-transparent = true
-tray-background = #bf616a
+tray-background = #FF6AC1
 
 [module/bspwm]
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = #8fbcbb
+label-focused-background = #9AEDFE
+label-focused-foreground = ${colors.foreground-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
@@ -87,19 +88,20 @@ type = internal/xwindow
 format = <label>
 label = %title%
 label-maxlen = 100
-format-foreground = "#8fbcbb"
+format-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
 interface = enp3s0
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = #F3F99D
 format-connected-prefix = "  "
 format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-foreground = ${colors.foreground-alt}
 label-connected = "%local_ip% "
 
-format-connected-background = ${colors.background-wlan-nord}
+format-connected-background = ${colors.background-wlan}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -119,10 +121,11 @@ time-alt = %H:%M:%S
 ;have to manually insert module margins here
 format-prefix = "    "
 format-suffix = ${hacks.module-margin}
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.foreground-alt}
+format-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 ;nord 9
-format-background = #a3be8c
+format-background = #57C7FF
 
 label = %date% %time%
 
@@ -132,18 +135,18 @@ master-mixer = Headphone
 
 format-volume = <label-volume>
 label-volume =   %percentage%
-label-volume-background = ${colors.background-volume-nord}
+label-volume-background = ${colors.background-volume}
 format-volume-prefix = ${hacks.module-margin}
 format-volume-suffix = ${hacks.module-margin}
 format-muted-prefix = ${hacks.module-margin}
 format-muted-suffix = ${hacks.module-margin}
-format-muted-foreground = ${colors.foreground}
-label-muted-background = ${colors.background-volume-nord}
-format-volume-foreground = ${colors.foreground}
-format-volume-prefix-background = ${colors.background-volume-nord}
-format-volume-suffix-background = ${colors.background-volume-nord}
-format-muted-suffix-background = ${colors.background-volume-nord}
-format-muted-prefix-background = ${colors.background-volume-nord}
+format-muted-foreground = ${colors.foreground-alt}
+label-muted-background = ${colors.background-volume}
+format-volume-foreground = ${colors.foreground-alt}
+format-volume-prefix-background = ${colors.background-volume}
+format-volume-suffix-background = ${colors.background-volume}
+format-muted-suffix-background = ${colors.background-volume}
+format-muted-prefix-background = ${colors.background-volume}
 label-muted =   %percentage% 
 format-muted = <label-muted>
 

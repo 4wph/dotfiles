@@ -30,7 +30,12 @@
       </item>
       <item label="VSCode">
 	<action name="Execute">
-	  <execute>codium</execute>
+	  <execute>/home/HDD/Downloads/Apps/codium/codium</execute>
+	</action>
+      </item>
+      <item label="Atom">
+	<action name="Execute">
+	  <execute>/home/HDD/Downloads/Apps/atom/atom-1.54.0-amd64/atom</execute>
 	</action>
       </item>
       <item label="Emacs">
@@ -46,7 +51,7 @@
       </item>
       <item label="Minecraft">
 	<action name="Execute">
-	  <execute>/home/HDD/SkaiaCraft/start.sh</execute>
+	  <execute>/home/HDD/Downloads/Apps/SkaiaCraft/start.sh</execute>
 	</action>
       </item>
       <separator/>
@@ -152,31 +157,36 @@
     <separator/>
     <menu id="root-menu-761145" label="OB Config">
       <item label="obconf">
-	<action name="Execute">
-	  <execute>obconf</execute>
-	</action>
+		<action name="Execute">
+			<execute>obconf</execute>
+		</action>
       </item>
       <item label="lxappearence">
-	<action name="Execute">
-	  <execute>lxappearance</execute>
-	</action>
+		<action name="Execute">
+			<execute>lxappearance</execute>
+		</action>
       </item>
       <item label="menu.xml">
-	<action name="Execute">
-	  <execute>mousepad ~/.config/openbox/menu.xml</execute>
-	</action>
+		<action name="Execute">
+			<execute>mousepad ~/.config/openbox/menu.xml</execute>
+		</action>
       </item>
       <item label="rc.xml">
-	<action name="Execute">
-	  <execute>mousepad ~/.config/openbox/rc.xml</execute>
-	</action>
+		<action name="Execute">
+			<execute>mousepad ~/.config/openbox/rc.xml</execute>
+		</action>
       </item>
       <item label="autostart.sh">
-	<action name="Execute">
-	  <execute>mousepad ~/.config/openbox/autostart.sh</execute>
-	</action>
+		<action name="Execute">
+			<execute>mousepad ~/.config/openbox/autostart.sh</execute>
+		</action>
       </item>
     </menu>
+	<item label="Setup">
+      <action name="Execute">
+        <execute>~/.local/bin/setup_env.sh</execute>
+      </action>
+    </item>
     <item label="Nitrogen">
       <action name="Execute">
 	<execute>nitrogen</execute>

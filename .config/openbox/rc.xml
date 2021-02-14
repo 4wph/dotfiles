@@ -19,7 +19,7 @@
     <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
-    <name>Vedanta-dark</name>
+    <name>Syscrash</name>
     <titleLayout>CML</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>no</animateIconify>
@@ -75,28 +75,6 @@
       <y>10</y>
     </popupFixedPosition>
   </resize>
-  <!-- You can reserve a portion of your screen where windows will not cover when
-     they are maximized, or when they are initially placed.
-     Many programs reserve space automatically, but you can use this in other
-     cases. -->
-  <margins>
-    <top>0</top>
-    <bottom>0</bottom>
-    <left>0</left>
-    <right>0</right>
-  </margins>
-  <dock>
-    <position>TopLeft</position>
-    <floatingX>0</floatingX>
-    <floatingY>0</floatingY>
-    <noStrut>no</noStrut>
-    <stacking>Above</stacking>
-    <direction>Vertical</direction>
-    <autoHide>no</autoHide>
-    <hideDelay>300</hideDelay>
-    <showDelay>300</showDelay>
-    <moveButton>Middle</moveButton>
-  </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <keybind key="W-S-Left">
@@ -108,18 +86,6 @@
     <keybind key="W-S-Right">
       <action name="SendToDesktop">
         <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="SendToDesktop">
-        <to>down</to>
         <wrap>no</wrap>
       </action>
     </keybind>
@@ -228,11 +194,6 @@
     <keybind key="W-q">
       <action name="Close"/>
     </keybind>
-    <keybind key="A-Escape">
-      <action name="Lower"/>
-      <action name="FocusToBottom"/>
-      <action name="Unfocus"/>
-    </keybind>
     <keybind key="W-m">
       <action name="ToggleMaximize"/>
     </keybind>
@@ -272,15 +233,6 @@
         </finalactions>
       </action>
     </keybind>
-    <keybind key="A-S-Tab">
-      <action name="PreviousWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-Return">
       <action name="Execute">
@@ -305,6 +257,11 @@
     <keybind key="W-C-e">
       <action name="Execute">
         <command>emacs</command>
+      </action>
+    </keybind>
+    <keybind key="W-c">
+      <action name="Execute">
+        <command>/home/HDD/Downloads/Apps/codium/codium</command>
       </action>
     </keybind>
     <!-- Launch scrot when Super + x is pressed -->
@@ -332,39 +289,15 @@
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
-    <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>500</doubleClickTime>
-    <!-- in milliseconds (1000 = 1 second) -->
     <screenEdgeWarpTime>0</screenEdgeWarpTime>
-    <!-- Time before changing desktops when the pointer touches the edge of the
-       screen while moving a window, in milliseconds (1000 = 1 second).
-       Set this to 0 to disable warping -->
     <screenEdgeWarpMouse>false</screenEdgeWarpMouse>
-    <!-- Set this to TRUE to move the mouse pointer across the desktop when
-       switching due to hitting the edge of the screen -->
     <context name="Frame">
-      <mousebind button="A-Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>
-      <mousebind button="A-Left" action="Click">
-        <action name="Unshade"/>
-      </mousebind>
       <mousebind button="W-Left" action="Drag">
         <action name="Move"/>
       </mousebind>
-      <mousebind button="A-Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
       <mousebind button="W-Right" action="Drag">
         <action name="Resize"/>
-      </mousebind>
-      <mousebind button="A-Middle" action="Press">
-        <action name="Lower"/>
-        <action name="FocusToBottom"/>
-        <action name="Unfocus"/>
       </mousebind>
     </context>
     <context name="Top">
@@ -426,89 +359,9 @@
         <action name="Raise"/>
       </mousebind>
     </context>
-    <context name="Icon">
-      <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-        <action name="ShowMenu">
-          <menu>client-menu</menu>
-        </action>
-      </mousebind>
-      <mousebind button="Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="ShowMenu">
-          <menu>client-menu</menu>
-        </action>
-      </mousebind>
-    </context>
     <context name="AllDesktops">
-      <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
       <mousebind button="Left" action="Click">
         <action name="ToggleOmnipresent"/>
-      </mousebind>
-    </context>
-    <context name="Shade">
-      <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>
-      <mousebind button="Left" action="Click">
-        <action name="ToggleShade"/>
-      </mousebind>
-    </context>
-    <context name="Iconify">
-      <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>
-      <mousebind button="Left" action="Click">
-        <action name="Iconify"/>
-      </mousebind>
-    </context>
-    <context name="Maximize">
-      <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
-      <mousebind button="Middle" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
-      <mousebind button="Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
-      <mousebind button="Left" action="Click">
-        <action name="ToggleMaximize"/>
-      </mousebind>
-      <mousebind button="Middle" action="Click">
-        <action name="ToggleMaximize">
-          <direction>vertical</direction>
-        </action>
-      </mousebind>
-      <mousebind button="Right" action="Click">
-        <action name="ToggleMaximize">
-          <direction>horizontal</direction>
-        </action>
-      </mousebind>
-    </context>
-    <context name="Close">
-      <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
-      <mousebind button="Left" action="Click">
-        <action name="Close"/>
       </mousebind>
     </context>
     <context name="Desktop">
@@ -521,34 +374,6 @@
         <action name="GoToDesktop">
           <to>next</to>
         </action>
-      </mousebind>
-      <mousebind button="A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>
-      <mousebind button="Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
       </mousebind>
     </context>
     <context name="Root">
@@ -564,34 +389,8 @@
         </action>
       </mousebind>
     </context>
-    <context name="MoveResize">
-      <mousebind button="Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-    </context>
-    <context name="Titlebar">
-      <mousebind button="Left" action="DoubleClick"/>
-    </context>
   </mouse>
   <menu>
-    <file>/var/lib/openbox/debian-menu.xml</file>
     <file>menu.xml</file>
     <hideDelay>200</hideDelay>
     <middle>no</middle>

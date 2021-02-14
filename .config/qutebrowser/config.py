@@ -1,5 +1,7 @@
 config.set('fonts.default_family', 'Source Code Pro')
 
+config.load_autoconfig()
+
 c.content.private_browsing = True
 
 c.downloads.location.directory = '/home/HDD/Downloads'
