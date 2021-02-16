@@ -11,6 +11,7 @@ alias sbai="firejail --appimage --private"
 alias webtree='tree -I "node_modules|.git|cljs-runtime"'
 alias citra="$APPS/citra/build/bin/Release/citra-qt"
 alias em="emacs -nw"
+alias vi="vim -i NONE"
 
 ex ()
 {

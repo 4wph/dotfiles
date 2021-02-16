@@ -4,13 +4,11 @@ set global ui_options ncurses_set_title=false ncurses_assistant=off ncurses_enab
 set global autoinfo ''
 set global autocomplete ''
 
-define-command f -params 1.. %{
-    edit -- %arg{@}
-} -shell-script-candidates %{ find -type f | sed s,^./,, }
+def find -params 1 -shell-script-candidates %{ find . -type f } %{ edit %arg{1} }
 
-define-command gf -params 1.. %{
-    edit -- %arg{@}
-} -shell-script-candidates %{ git ls-files | sed s,^./,, }
+def git-edit -params 1 -shell-script-candidates %{ git ls-files } %{ edit %arg{1} }
+
+map global user <space> ':git-edit '
 
 map global normal '#' :comment-line<ret> -docstring 'comment line'
 map global normal '<a-#>' :comment-block<ret> -docstring 'comment block'
