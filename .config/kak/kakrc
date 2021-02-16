@@ -1,0 +1,16 @@
+add-highlighter global/ wrap -word -indent
+
+set global ui_options ncurses_set_title=false ncurses_assistant=off ncurses_enable_mouse=false
+set global autoinfo ''
+set global autocomplete ''
+
+define-command f -params 1.. %{
+    edit -- %arg{@}
+} -shell-script-candidates %{ find -type f | sed s,^./,, }
+
+define-command gf -params 1.. %{
+    edit -- %arg{@}
+} -shell-script-candidates %{ git ls-files | sed s,^./,, }
+
+map global normal '#' :comment-line<ret> -docstring 'comment line'
+map global normal '<a-#>' :comment-block<ret> -docstring 'comment block'
