@@ -1,3 +1,5 @@
+#+OPTIONS: H:1 toc:nil
+
 * Theming
   - *Theme*: [[https://draculatheme.com/][Dracula]]
     - *Openbox Theme*: [[https://www.box-look.org/p/1383003][Dracula]]

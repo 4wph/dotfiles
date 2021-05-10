@@ -6,7 +6,8 @@ set global autocomplete ''
 
 def find -params 1 -shell-script-candidates %{ find . -type f } %{ edit %arg{1} }
 
-def git-find -params 1 -shell-script-candidates %{ git ls-files } %{ edit %arg{1} }
+# def git-find -params 1 -shell-script-candidates %{ git ls-files } %{ edit %arg{1} }
+# def fd -params 1 -shell-script-candidates %{ fd . -t f } %{ edit %arg{1} }
 
 map global user w ': w<ret>'
 map global user d ': db<ret>'
@@ -15,9 +16,8 @@ map global user q ': q<ret>'
 map global user b ': b '
 map global user f ': find '
 
-map global user g ': git-find '
 map global user p ': nop %sh{ groff "$kak_buffile" -ms -Tpdf > $(basename "$kak_buffile" .ms).pdf }<ret>'
 
-map global normal '#' :comment-line<ret> -docstring 'comment line'
-map global normal '<a-#>' :comment-block<ret> -docstring 'comment block'
+map global normal '#' :comment-line<ret>
+map global normal '<a-#>' :comment-block<ret>
 

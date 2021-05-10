@@ -24,13 +24,14 @@ end)
 -- require('init-lsp')
 
 vim.cmd('colorscheme snazzy')-- FIXME
--- vim.cmd('autocmd BufReadPost * :DetectIndent')-- FIXME
+vim.cmd('autocmd BufReadPost * :DetectIndent')-- FIXME
 
 vim.g.ctrlp_user_command = { '.git', 'cd %s && git ls-files -co --exclude-standard' }
 vim.g.completion_matching_strategy_list = { 'exact', 'substring', 'fuzzy' }
 
 vim.o.cot = 'menuone,noinsert,noselect'
 vim.o.termguicolors = true
+vim.o.hlsearch = false
 
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
@@ -43,8 +44,8 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = 'all',
   highlight = {
     enable = true,
-  },
-  indent = {
-    enable = true
   }
+  -- indent = {
+  --   enable = true
+  -- }
 }

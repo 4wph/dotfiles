@@ -10,8 +10,6 @@ alias sb="firejail --private --allusers"
 alias sbai="firejail --appimage --private"
 alias webtree='tree -I "node_modules|.git|cljs-runtime"'
 alias citra="$APPS/citra/build/bin/Release/citra-qt"
-alias em="emacs -nw"
-alias vi="vim -i NONE"
 
 ex ()
 {
@@ -38,4 +36,12 @@ ex ()
   fi
 }
 
-# vim: set filetype=sh :
+count() {
+  COUNT=0
+  echo 0
+  while true; do
+    sleep 1
+    let COUNT=COUNT+1
+    echo "\e[1A\e[K$COUNT"
+  done
+}
