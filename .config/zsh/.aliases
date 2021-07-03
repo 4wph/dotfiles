@@ -4,6 +4,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
+alias mg='mg -n'
 
 alias apulse="$APPS/apulse/build/apulse"
 alias sb="firejail --private --allusers"
