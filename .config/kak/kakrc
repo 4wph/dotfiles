@@ -21,3 +21,27 @@ map global user p ': nop %sh{ groff "$kak_buffile" -ms -Tpdf > $(basename "$kak_
 map global normal '#' :comment-line<ret>
 map global normal '<a-#>' :comment-block<ret>
 
+# https://github.com/mawww/kakoune/issues/2108
+
+define-command sleuth -docstring 'Heuristically set buffer options' %{
+  try %{
+    evaluate-commands -draft %{
+      # Search the first indent level
+      execute-keys 'gg' '/' '^\h+' '<ret>'
+
+      # Tab vs. Space
+      # https://youtu.be/V7PLxL8jIl8
+      try %{
+        execute-keys '<a-k>' '\t' '<ret>'
+        set-option buffer indentwidth 0
+      } catch %{
+        set-option buffer indentwidth %val{selection_length}
+      }
+    }
+  }
+}
+
+# Run sleuth when opening files.
+hook -group sleuth global BufOpenFile .* %{
+  sleuth
+}

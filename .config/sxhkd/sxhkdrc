@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 # program launcher
 super + d
-	dmenu_run -h 30 -nb '#1e2127' -nf '#eff0eb' -sb '#9AEDFE' -sf '#1e2127' -fn 'Source Code Pro'
+	dmenu_run -h 30 -nb '#292d3e' -nf '#dbe0ff' -sb '#c792ea' -sf '#000000' -fn 'Source Code Pro'
 
 super + b
 	qutebrowser
