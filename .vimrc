@@ -29,8 +29,8 @@ let g:markdown_folding = 1
 set foldmethod=indent
 set nofoldenable
 
-inoremap <C-@> <C-x><C-o>
-inoremap <Tab> <C-n>
+inoremap <expr> <Tab> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 inoremap <S-Tab> <C-p>
 
 set path=**
