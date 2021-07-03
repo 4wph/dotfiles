@@ -31,3 +31,7 @@ set nofoldenable
 
 inoremap <C-@> <C-x><C-o>
 inoremap <Tab> <C-n>
+inoremap <S-Tab> <C-p>
+
+set path=**
+nnoremap <C-p> :find *
